@@ -137,6 +137,44 @@ State at which UC the scenario refers to
 # Glossary
 
 \<use UML class diagram to define important concepts in the domain of the system, and their relationships>  <concepts are used consistently all over the document, ex in use cases, requirements etc>
+```plantuml
+class Manager {
+}
 
+class Visitor {
+  +name
+  +surname
+}
+
+class Capsule {
+  +IDType
+  +pricePerUnit
+  +Brand
+}
+
+class Box {
+  +ID
+  +numberOfBoxes
+}
+
+class Order{
+  +ID
+  +status
+  +trackingNumber
+}
+
+class Wallet {
+  +ID
+  +balance
+}
+
+Manager --|> Employee
+Box "1" o-- "50" Capsule : contains
+Order "1..*" o-- "1" Box : made up of
+Manager "1" -- "1..*" Order : sends
+Employee "1" <|-- "1" Wallet : has
+Manager "1" -- "1..*" Visitor : sells to
+Manager "1" -- "1..*" Employee : sells to
+```
 # System Design
 \<describe here system design> <must be consistent with Context diagram>
