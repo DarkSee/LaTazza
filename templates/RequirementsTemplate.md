@@ -29,7 +29,11 @@ Version:
 
 | Stakeholder name  | Description | 
 | ----------------- |:-----------:|
-|                   |             | 
+|         Employee          |       Person who works in a workplace where LaTazza is used so that he/she can buy capsules     | 
+|         Client          |       Person who does not work in the company where LaTazza is used but that can buy coffee as well as the employees      |
+|         Manager          |       A specialized employee, that can handle the use of LaTazza for supplying and selling capsules      | 
+|         Others          |       Persons that are not allowed to use the capsule vending machine      | 
+
 
 # Context Diagram and interfaces
 
