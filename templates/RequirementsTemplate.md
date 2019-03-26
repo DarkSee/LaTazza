@@ -45,12 +45,14 @@ skinparam packageStyle rectangle
 actor Employee as E
 actor Client as C
 actor Manager as M
+actor Warehouse as W
 
 rectangle system {
   (LaTazza) as LT
    M -- LT : "manages the stocks"
-   LT -- E : "buys capsules w/ cash or local acc"
-   LT -- C : "buys capsules w/ cash only"
+   E -- LT : "buys capsules w/ cash or local acc"
+   C -- LT : "buys capsules w/ cash only"
+   LT -- W : "orders the desired amount of capsules"
 }
 ```
 \<Define here Context diagram using UML use case diagram>
