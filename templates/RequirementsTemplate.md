@@ -1,10 +1,10 @@
 # Requirements Document Template
 
-Authors:
+Authors: ["Hip hip"] team 
 
-Date:
+Date: 26th March 2019
 
-Version:
+Version: 0.0.1
 
 # Contents
 
