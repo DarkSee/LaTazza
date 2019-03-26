@@ -38,6 +38,21 @@ Version: 0.0.1
 # Context Diagram and interfaces
 
 ## Context Diagram
+```plantuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor Employee as E
+actor Client as C
+actor Manager as M
+
+rectangle system {
+  (LaTazza) as LT
+   M -- LT : "manages the stocks"
+   LT -- E : "buys capsules w/ cash or local acc"
+   LT -- C : "buys capsules w/ cash only"
+}
+```
 \<Define here Context diagram using UML use case diagram>
 
 \<actors are a subset of stakeholders>
