@@ -36,7 +36,7 @@ Version: 0.0.1
 |         Others          |       Persons that are not allowed to use the capsule vending machine      | 
 |        Warehouse        |        Place where all capsules are stores and ready to be delivered | 
 |        Banking System        |        The system for managing the payment method between manager and warehouse |
-
+|        Capsules           |         Product to be selt/bought  |
 
 
 
@@ -54,15 +54,17 @@ actor Manager as M
 actor Warehouse as W
 actor Inventory as I
 actor "Banking System" as BS
+actor "Capsules" as C
 
 rectangle system {
   (LaTazza) as LT
-   M -- LT : "manages the stocks"
-   E -- LT : "buys capsules w/ cash or local acc"
-   V -- LT : "buys capsules w/ cash only"
-   LT -- I : "records all the capsules available"
-   LT -- W : "orders the desired amount of capsules"
-   LT -- BS 
+   M -- LT
+   E -- LT
+   V -- LT
+   LT -- I
+   LT -- W
+   LT -- BS
+   C -- LT  
 }
 ```
 
