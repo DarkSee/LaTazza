@@ -158,6 +158,15 @@ m -- (make an order)
 |  Nominal Scenario     | If the client is an employee, the manager selects the corresponding local account, he selects the payment method, the number of capsules requested. Then he commits the request. The application updates the summary.  |
 |  Variants     | If the capsules in the summary are not enough, the application prints an error message. If the debt is higher than threshold, sale will not be performed. |
 
+### Use case 3, Add credit to local account's wallet
+| Actors Involved        |  |
+| ------------- |:-------------:| 
+|  Precondition     | Employees ask for adding credit to their account|  
+|  Post condition     | The wallet balance is increased |
+|  Nominal Scenario     | Manager takes money from an employee and then add credit to the wallet of the account related to that employee.  |
+|  Variants     | The balance can be increased or decreased af a different amount than desired, due to typos. The increased wallet balance can belong to the wrong account. Possibility to undo should be implemented. |
+
+
 ### Use case \<n>
 
 
