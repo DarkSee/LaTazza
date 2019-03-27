@@ -214,7 +214,7 @@ State at which UC the scenario refers to
 
 # Glossary
 
-\<use UML class diagram to define important concepts in the domain of the system, and their relationships>  <concepts are used consistently all over the document, ex in use cases, requirements etc>
+
 ```plantuml
 class Manager {
 }
@@ -261,4 +261,51 @@ Manager "1" -- "1..*" Employee : sells to
 Manager "1" -- "1" Summary : updates
 ```
 # System Design
-\<describe here system design> <must be consistent with Context diagram>
+```plantuml
+top to bottom direction
+
+class "Application-main" {
+ +makeOrder()
+ +sellCapsules()
+ +showTotalBalance()
+ +addCreditToWallet()
+
+}
+
+class "Buying interface" {
+ +selectTypeOfCapsules()
+ +selectNumberOfBoxes()
+ +commitOrder()
+ +modifyOrder()
+ +showOrderStatus()
+
+}
+
+class "Selling interface" {
+ +selectCapsuleToSell()
+ +confirmSale()
+
+}
+
+class "Summary interface" {
+ +showTotalBalance()
+ +showCurrentInventory()
+
+}
+
+class "Account management interface" {
+ +createNewAccount()
+ +deleteAccount()
+ +addCredit()
+ +decreaseCredit()
+ +showWalletBalance()
+
+} 
+
+
+"Selling interface" -- "Application-main"
+"Summary interface" -- "Application-main"
+"Buying interface" -- "Application-main"
+"Account management interface" -- "Application-main"
+"Account management interface" -- "Selling interface"
+```
