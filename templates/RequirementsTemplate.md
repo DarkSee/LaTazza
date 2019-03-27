@@ -147,7 +147,7 @@ m -- (make an order)
 | ------------- |:-------------:| 
 |  Precondition     | There are not enough capsules|  
 |  Post condition     | Now there are enough capsules|
-|  Nominal Scenario     | The manager selects the number of capsules needed, sends an order to the warehouse, updates the summary after receiving the boxes  |
+|  Nominal Scenario     | The manager selects the number of boxes needed, sends an order to the warehouse. The application updates the summary after receiving the boxes  |
 |  Variants     | If the delivered order is incorrect, the corresponding value will be refund to the manager. If the payment is unsuccessful, order will be cancelled. |
 
 ### Use case 2, Sell capsules
@@ -169,17 +169,27 @@ State at which UC the scenario refers to
 
 ## Scenario 1
 
-| Scenario ID: SC1        | Corresponds to UC:  |
+| Scenario ID: SC1        | Corresponds to UC:  Make an order|
 | ------------- |:-------------:| 
 | Step#        | Description  |
-|  1     |  |  
-|  2     |  |
-|  ...     |  |
+|  1     | The manager selects the number of boxes needed | 
+|  2     | The manager selects the type of capsules|
+|  3    | The manager confirms the order|
+|  4    |  The application sends an email with order details to the warehouse|
+|  5     |  The application update the summary after receiving the boxes|
+
 
 ## Scenario 2
 
-...
-
+| Scenario ID: SC1        | Corresponds to UC:  Sell capsules to employee|
+| ------------- |:-------------:| 
+| Step#        | Description  |
+|  1     | Manager selects the local account corresponding to the employee | 
+|  2     | Maanger selects the number and type of capsules requested by the client |
+|  3    |  Manager selects the payment method chosen by the client|
+|  4    |  Manger confirms the sale|
+|  5     |  The application update the summary |
+| 6      | If the employee pays with his wallet, the application updates his balance|
 # Glossary
 
 \<use UML class diagram to define important concepts in the domain of the system, and their relationships>  <concepts are used consistently all over the document, ex in use cases, requirements etc>
