@@ -72,7 +72,12 @@ rectangle system {
 ## Interfaces
 | Actor | Logical Interface | Physical Interface  |
 | ------------- |:-------------:| -----:|
-|       |  |  |
+|   Employee    |               | Speaking with the manager  |
+|   Visitor     |               | Speaking with the manager |
+|   Manager     |     GUI       |    Screen , keyboard|
+|  Warehouse    |     GUI       |Internet connection|
+| Capsule       |   bar code      |bar code reader|
+| Banking System | Web service, APIs |Internet connection |
 
 # Stories and personas
 \<A Persona is a realistic impersonation of an actor. Define here a few personas and describe in plain text how a persona interacts with the system>
