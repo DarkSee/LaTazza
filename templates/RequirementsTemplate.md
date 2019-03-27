@@ -32,7 +32,7 @@ Version: 0.0.1
 |         Employee          |       Person who works in a workplace where LaTazza is used so that he/she can buy capsules     | 
 |         Visitor          |       Person who does not work in the company where LaTazza is used but that can buy coffee as well as the employees      |
 |         Manager          |       A specialized employee, that can handle the use of LaTazza for supplying and selling capsules      | 
-|        Inventory        |        Archive that records all the current amount of capsules available | 
+|        Summary       |        Archive that records all the current amount of capsules available | 
 |         Others          |       Persons that are not allowed to use the capsule vending machine      | 
 |        Warehouse        |        Place where all capsules are stores and ready to be delivered | 
 |        Banking System        |        The system for managing the payment method between manager and warehouse |
@@ -50,14 +50,14 @@ skinparam packageStyle rectangle
 
 actor Manager as M
 actor Warehouse as W
-actor Inventory as I
+actor Summary as S
 actor "Banking System" as BS
 actor "Capsules" as C
 
 rectangle system {
   (LaTazza) as LT
    M -- LT
-   LT -- I
+   LT -- S
    LT -- W
    LT -- BS
    C -- LT  
@@ -117,6 +117,26 @@ rectangle system {
 
 ## Use case diagram
 \<define here UML Use case diagram UCD summarizing all use cases, and their relationships>
+
+```plantuml
+left to right direction
+skinparam packageStyle rectangular
+
+actor warehouse as w
+actor manager as m
+actor "Banking System" as bs
+
+m -- (sell capsules)
+m -- (make an order)
+(make an order) -- bs
+(make an order) -- w
+(make an order) .> (update summary) : include
+
+(sell capsules) .> (accept payment): include
+(accept payment) .> (use account balance for employee): include
+(accept payment) .> (use cash for visitors) : include
+(sell capsules) .> (update summary) : include
+```
 
 ## Use Cases
 \<describe here each use case in the UCD>
@@ -187,7 +207,7 @@ class Wallet {
   +balance
 }
 
-class Inventory {
+class Summary {
    +cashAccount
    +numberOfCapsulePerType
 }
@@ -199,7 +219,7 @@ Manager "1" -- "1..*" Order : sends
 Employee "1" <|-- "1" Wallet : has
 Manager "1" -- "1..*" Visitor : sells to
 Manager "1" -- "1..*" Employee : sells to
-Manager "1" -- "1" Inventory : manage
+Manager "1" -- "1" Summary : updates
 ```
 # System Design
 \<describe here system design> <must be consistent with Context diagram>
