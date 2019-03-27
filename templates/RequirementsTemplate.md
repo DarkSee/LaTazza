@@ -35,6 +35,8 @@ Version: 0.0.1
 |        Inventory        |        Archive that records all the current amount of capsules available | 
 |         Others          |       Persons that are not allowed to use the capsule vending machine      | 
 |        Warehouse        |        Place where all capsules are stores and ready to be delivered | 
+|        Banking System        |        The system for managing the payment method between manager and warehouse |
+
 
 
 
@@ -51,6 +53,7 @@ actor Visitor as V
 actor Manager as M
 actor Warehouse as W
 actor Inventory as I
+actor "Banking System" as BS
 
 rectangle system {
   (LaTazza) as LT
@@ -59,6 +62,7 @@ rectangle system {
    V -- LT : "buys capsules w/ cash only"
    LT -- I : "records all the capsules available"
    LT -- W : "orders the desired amount of capsules"
+   LT -- BS 
 }
 ```
 
