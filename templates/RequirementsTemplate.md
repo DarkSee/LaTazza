@@ -30,7 +30,7 @@ Version: 0.0.1
 | Stakeholder name  | Description | 
 | ----------------- |:-----------:|
 |         Employee          |       Person who works in a workplace where LaTazza is used so that he/she can buy capsules     | 
-|         Client          |       Person who does not work in the company where LaTazza is used but that can buy coffee as well as the employees      |
+|         Visitor          |       Person who does not work in the company where LaTazza is used but that can buy coffee as well as the employees      |
 |         Manager          |       A specialized employee, that can handle the use of LaTazza for supplying and selling capsules      | 
 |        Inventory        |        Archive that records all the current amount of capsules available | 
 |         Others          |       Persons that are not allowed to use the capsule vending machine      | 
@@ -47,7 +47,7 @@ left to right direction
 skinparam packageStyle rectangle
 
 actor Employee as E
-actor Client as C
+actor Visitor as V
 actor Manager as M
 actor Warehouse as W
 actor Inventory as I
@@ -56,7 +56,7 @@ rectangle system {
   (LaTazza) as LT
    M -- LT : "manages the stocks"
    E -- LT : "buys capsules w/ cash or local acc"
-   C -- LT : "buys capsules w/ cash only"
+   V -- LT : "buys capsules w/ cash only"
    LT -- I : "records all the capsules available"
    LT -- W : "orders the desired amount of capsules"
 }
