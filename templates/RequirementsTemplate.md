@@ -33,6 +33,8 @@ Version: 0.0.1
 |         Client          |       Person who does not work in the company where LaTazza is used but that can buy coffee as well as the employees      |
 |         Manager          |       A specialized employee, that can handle the use of LaTazza for supplying and selling capsules      | 
 |         Others          |       Persons that are not allowed to use the capsule vending machine      | 
+|        Warehouse        |        Place where all capsules are stores and ready to be delivered | 
+
 
 
 # Context Diagram and interfaces
@@ -168,6 +170,11 @@ class Wallet {
   +balance
 }
 
+class Inventory {
+   +cashAccount
+   +numberOfCapsulePerType
+}
+
 Manager --|> Employee
 Box "1" o-- "50" Capsule : contains
 Order "1..*" o-- "1" Box : made up of
@@ -175,6 +182,7 @@ Manager "1" -- "1..*" Order : sends
 Employee "1" <|-- "1" Wallet : has
 Manager "1" -- "1..*" Visitor : sells to
 Manager "1" -- "1..*" Employee : sells to
+Manager "1" -- "1" Inventory : manage
 ```
 # System Design
 \<describe here system design> <must be consistent with Context diagram>
