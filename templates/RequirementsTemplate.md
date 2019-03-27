@@ -69,7 +69,7 @@ rectangle system {
 | Actor | Logical Interface | Physical Interface  |
 | ------------- |:-------------:| -----:|
 |   Manager     |     GUI       |    Screen , keyboard|
-|  Warehouse    |     GUI       |Internet connection|
+|  Warehouse    |     email services       |Internet connection|
 | Capsule       |   bar code      |bar code reader|
 | Banking System | Web service, APIs |Internet connection |
 
@@ -109,6 +109,7 @@ rectangle system {
 |  NFR5     | Domain      | Payment should be made in euros | FR1, FR2, FR3 |
 |  NFR6     | Reliability | Show the correct amount of capsules available at the moment, refresh automatically after each sale | FR4|
 |  NFR7     | Efficiency  | Payment should be managed in less than 1 min | FR2|
+|  NFR8     | Legislation | Debt should be kept above 50€ | FR3 |
 
 
 
@@ -141,15 +142,21 @@ m -- (make an order)
 ## Use Cases
 \<describe here each use case in the UCD>
 
-### Use case 1, UC1
+### Use case 1, Make an order
 | Actors Involved        |  |
 | ------------- |:-------------:| 
-|  Precondition     | \<Boolean expression, must evaluate to true before the UC can start> |  
-|  Post condition     | \<Boolean expression, must evaluate to true after UC is finished> |
-|  Nominal Scenario     | \<Textual description of actions executed by the UC> |
-|  Variants     | \<other executions, ex in case of errors> |
+|  Precondition     | There are not enough capsules|  
+|  Post condition     | Now there are enough capsules|
+|  Nominal Scenario     | The manager selects the number of capsules needed, sends an order to the warehouse, updates the summary after receiving the boxes  |
+|  Variants     | If the delivered order is incorrect, the corresponding value will be refund to the manager. If the payment is unsuccessful, order will be cancelled. |
 
-### Use case 2, UC2
+### Use case 2, Sell capsules
+| Actors Involved        |  |
+| ------------- |:-------------:| 
+|  Precondition     | Client asks for capsules|  
+|  Post condition     | Client has got capsules to use|
+|  Nominal Scenario     | If the client is an employee, the manager selects the corresponding local account, he selects the payment method, the number of capsules requested. Then he commits the request. The application updates the summary.  |
+|  Variants     | If the capsules in the summary are not enough, the application prints an error message. If the debt is higher than threshold, sale will not be performed. |
 
 ### Use case \<n>
 
