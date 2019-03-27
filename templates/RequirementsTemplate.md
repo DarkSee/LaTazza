@@ -48,8 +48,6 @@ Version: 0.0.1
 left to right direction
 skinparam packageStyle rectangle
 
-actor Employee as E
-actor Visitor as V
 actor Manager as M
 actor Warehouse as W
 actor Inventory as I
@@ -59,8 +57,6 @@ actor "Capsules" as C
 rectangle system {
   (LaTazza) as LT
    M -- LT
-   E -- LT
-   V -- LT
    LT -- I
    LT -- W
    LT -- BS
@@ -72,8 +68,6 @@ rectangle system {
 ## Interfaces
 | Actor | Logical Interface | Physical Interface  |
 | ------------- |:-------------:| -----:|
-|   Employee    |               | Speaking with the manager  |
-|   Visitor     |               | Speaking with the manager |
 |   Manager     |     GUI       |    Screen , keyboard|
 |  Warehouse    |     GUI       |Internet connection|
 | Capsule       |   bar code      |bar code reader|
