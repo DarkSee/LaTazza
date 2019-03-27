@@ -190,7 +190,7 @@ State at which UC the scenario refers to
 
 ## Scenario 2
 
-| Scenario ID: SC1        | Corresponds to UC:  Sell capsules to employee|
+| Scenario ID: SC2        | Corresponds to UC:  Sell capsules to employee|
 | ------------- |:-------------:| 
 | Step#        | Description  |
 |  1     | Manager selects the local account corresponding to the employee | 
@@ -199,6 +199,19 @@ State at which UC the scenario refers to
 |  4    |  Manger confirms the sale|
 |  5     |  The application update the summary |
 | 6      | If the employee pays with his wallet, the application updates his balance|
+
+
+## Scenario 3
+
+| Scenario ID: SC3        | Corresponds to UC:  Add credit to local account's wallet|
+| ------------- |:-------------:| 
+| Step#        | Description  |
+|  1     | Manager selects the local account corresponding to the employee | 
+|  2     | Maanger types how much credit the employee wants to add to its account wallet balance |
+|  3     |  Manager confirms the action |
+|  4     | The application shows a popup that confirms that the action had succes |
+|  5     | The application updates the balance related to that account|
+
 # Glossary
 
 \<use UML class diagram to define important concepts in the domain of the system, and their relationships>  <concepts are used consistently all over the document, ex in use cases, requirements etc>
