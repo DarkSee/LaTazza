@@ -129,6 +129,7 @@ actor "Banking System" as bs
 
 m -- (sell capsules)
 m -- (make an order)
+m -- (add credit)
 (make an order) -- bs
 (make an order) -- w
 (make an order) .> (update summary) : include
@@ -137,6 +138,8 @@ m -- (make an order)
 (accept payment) .> (use account balance for employee): include
 (accept payment) .> (use cash for visitors) : include
 (sell capsules) .> (update summary) : include
+(add credit) .> (update wallet) : include
+
 ```
 
 ## Use Cases
@@ -164,7 +167,7 @@ m -- (make an order)
 |  Precondition     | Employees ask for adding credit to their account|  
 |  Post condition     | The wallet balance is increased |
 |  Nominal Scenario     | Manager takes money from an employee and then add credit to the wallet of the account related to that employee.  |
-|  Variants     | The balance can be increased or decreased af a different amount than desired, due to typos. The increased wallet balance can belong to the wrong account. Possibility to undo should be implemented. |
+|  Variants     | The balance can be increased or decreased by a different amount than desired, due to typos. The increased wallet balance can belong to the wrong account. Possibility to undo should be implemented. |
 
 
 ### Use case \<n>
