@@ -7,7 +7,7 @@ Date: 26th March 2019
 Version: 0.0.1
 
 # Contents
-
+- [Notes](#notes)
 - [Stakeholders](#stakeholders)
 - [Context Diagram and interfaces](#context-diagram-and-interfaces)
 	+ [Context Diagram](#context-diagram)
@@ -23,6 +23,13 @@ Version: 0.0.1
 	+ [Relevant scenarios](#relevant-scenarios)
 - [Glossary](#glossary)
 - [System design](#system-design)
+
+# Notes
+We assumed that:
+- The manager is the only one who interacts with the LaTazza application.
+- Clients refer manager in order to required new bevarages.
+- The warehouse receives order requests by email, so he doesn't interact with the application.
+
 
 # Stakeholders
 
@@ -77,6 +84,33 @@ rectangle system {
 \<A Persona is a realistic impersonation of an actor. Define here a few personas and describe in plain text how a persona interacts with the system>
 
 \<Persona is-an-instance-of actor>  \<stories will be formalized later as use cases>
+
+Persona1 : THE MANAGER
+
+John Martin
+42, manager of a company, divorced
+
+As a manager, John is responsible for managing the sale of bevarages in the company
+and for the payments of the capsules.
+Currently when employees or visitors want to purchase new capsules, the manager handles the orders. 
+Moreover, when the employees want to charge their local account, the John updates their balances. 
+
+Goals:
+- Manage the summary of capsules available
+- Make easier the management of economic transactions with clients and warehouse
+
+
+It's monday morning.
+John arrives in the office and he opens the application. 
+He notices that the number of capsules available is not enough for the entire week. 
+For this reason he decides to make an order to the warehouse.
+The first client of the day is Greg, an employee, that he wants to order 25 capsules of different types. 
+Since his local account is empty, he asks to John to charge his account.
+So John selects the capsules requested and makes the order.
+In this particular day, there are also a lot of visitors interested in the conference held in the company. 
+One of them goes to John's office asking for a capsule of coffee.
+John manages the order using the application and the visitor pays cash.
+
 
 
 # Functional and non functional requirements
