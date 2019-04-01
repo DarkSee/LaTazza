@@ -93,7 +93,7 @@ John Martin
 As a manager, John is responsible for managing the sale of bevarages in the company
 and for the payments of the capsules.
 Currently when employees or visitors want to purchase new capsules, the manager handles the orders. 
-Moreover, when the employees want to charge their local account, the John updates their balances. 
+Moreover, when the employees want to charge their local account, John updates their balances. 
 
 Goals:
 - Manage the summary of capsules available
