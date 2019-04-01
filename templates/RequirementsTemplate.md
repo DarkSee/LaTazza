@@ -164,6 +164,8 @@ actor "Banking System" as bs
 m -- (sell capsules)
 m -- (make an order)
 m -- (add credit)
+m -- (add new local account)
+m -- (remove local account)
 (make an order) -- bs
 (make an order) -- w
 (make an order) .> (update summary) : include
@@ -213,6 +215,15 @@ m -- (add credit)
 |  Post condition     | The new employee has got his local account|
 |  Nominal Scenario     | The manager adds a new account linked to the new hired employee, setting his balance to zero.  |
 |  Variants     | If the new emloyee wants to recharge immediately his wallet, the balance will not be set to zero but to the amount charged. |
+
+### Use case 5, Remove local account
+
+| Actors Involved        |  |
+| ------------- |:-------------:| 
+|  Precondition     | An employee leaves the company|  
+|  Post condition     | The local account of the employee is no longer available|
+|  Nominal Scenario     | The manager removes the account of the employee.  |
+|  Variants     | If the manager selects the wrong ID, he/she has the possibility to revert the operation before doing other actions. |
 
 
 # Relevant scenarios
