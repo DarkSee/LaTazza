@@ -320,12 +320,13 @@ class "Buying interface" {
  +commitOrder()
  +modifyOrder()
  +showOrderStatus()
+ +updateSummaryAfterDelivery()
 
 }
 
 class "Selling interface" {
  +selectCapsuleToSell()
- +confirmSale()
+ +confirmSale&Update()
 
 }
 
