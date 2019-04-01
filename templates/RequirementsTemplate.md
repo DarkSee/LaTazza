@@ -4,7 +4,7 @@ Authors: ["Hip hip"] team
 
 Date: 26th March 2019
 
-Version: 0.0.1
+Version: 0.0.2
 
 # Contents
 - [Notes](#notes)
@@ -25,6 +25,8 @@ Version: 0.0.1
 - [System design](#system-design)
 
 # Notes
+
+
 We assumed that:
 - The manager is the only one who interacts with the LaTazza application.
 - Clients refer manager in order to required new bevarages.
@@ -73,6 +75,8 @@ rectangle system {
 
 
 ## Interfaces
+
+
 | Actor | Logical Interface | Physical Interface  |
 | ------------- |:-------------:| -----:|
 |   Manager     |     GUI       |    Screen , keyboard|
@@ -81,9 +85,7 @@ rectangle system {
 | Banking System | Web service, APIs |Internet connection |
 
 # Stories and personas
-\<A Persona is a realistic impersonation of an actor. Define here a few personas and describe in plain text how a persona interacts with the system>
 
-\<Persona is-an-instance-of actor>  \<stories will be formalized later as use cases>
 
 Persona1 : THE MANAGER
 
@@ -117,7 +119,6 @@ John manages the order using the application and the visitor pays cash.
 
 ## Functional Requirements
 
-\<In the form DO SOMETHING, or VERB NOUN, describe high level capabilities of the system> <will match to high level use cases>
 
 | ID        | Description  |
 | ------------- |:-------------:| 
@@ -132,7 +133,6 @@ John manages the order using the application and the visitor pays cash.
 
 ## Non Functional Requirements
 
-\<Describe constraints on functional requirements>
 
 | ID        | Type (efficiency, reliability, ..)           | Description  | Refers to |
 | ------------- |:-------------:| :-----:| -----:|
@@ -151,7 +151,7 @@ John manages the order using the application and the visitor pays cash.
 
 
 ## Use case diagram
-\<define here UML Use case diagram UCD summarizing all use cases, and their relationships>
+
 
 ```plantuml
 left to right direction
@@ -177,9 +177,9 @@ m -- (add credit)
 ```
 
 ## Use Cases
-\<describe here each use case in the UCD>
 
 ### Use case 1, Make an order
+
 | Actors Involved        |  |
 | ------------- |:-------------:| 
 |  Precondition     | There are not enough capsules|  
@@ -188,6 +188,7 @@ m -- (add credit)
 |  Variants     | If the delivered order is incorrect, the corresponding value will be refund to the manager. If the payment is unsuccessful, order will be cancelled. |
 
 ### Use case 2, Sell capsules
+
 | Actors Involved        |  |
 | ------------- |:-------------:| 
 |  Precondition     | Client asks for capsules|  
@@ -196,6 +197,7 @@ m -- (add credit)
 |  Variants     | If the capsules in the summary are not enough, the application prints an error message. If the debt is higher than threshold, sale will not be performed. |
 
 ### Use case 3, Add credit to local account's wallet
+
 | Actors Involved        |  |
 | ------------- |:-------------:| 
 |  Precondition     | Employees ask for adding credit to their account|  
@@ -203,15 +205,18 @@ m -- (add credit)
 |  Nominal Scenario     | Manager takes money from an employee and then add credit to the wallet of the account related to that employee.  |
 |  Variants     | The balance can be increased or decreased by a different amount than desired, due to typos. The increased wallet balance can belong to the wrong account. Possibility to undo should be implemented. |
 
+### Use case 4, Add new local account
 
-### Use case \<n>
+| Actors Involved        |  |
+| ------------- |:-------------:| 
+|  Precondition     | A new employee is hired|  
+|  Post condition     | The new employee has got his local account|
+|  Nominal Scenario     | The manager adds a new account linked to the new hired employee, setting his balance to zero.  |
+|  Variants     | If the new emloyee wants to recharge immediately his wallet, the balance will not be set to zero but to the amount charged. |
 
 
 # Relevant scenarios
-State at which UC the scenario refers to
-\<a scenario is a sequence of steps that corresponds to a particular execution of one use case>
-\<a scenario is more formal description of a story>
-\<only relevant scenarios should be described>
+
 
 ## Scenario 1
 
