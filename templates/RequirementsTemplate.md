@@ -254,6 +254,24 @@ m -- (add credit)
 |  4     | The application shows a popup that confirms that the action had succes |
 |  5     | The application updates the balance related to that account|
 
+## Scenario 4
+
+| Scenario ID: SC4        | Corresponds to UC:  Add new local account|
+| ------------- |:-------------:| 
+| Step#        | Description  |
+|  1     | Manager creates a new local account for the employee just hired|
+|  2     | Manager sets the ID of the account with the employee's ID|
+|  3     | Manager sets to 0€ the local account balance |
+
+## Scenario 5
+
+| Scenario ID: SC5        | Corresponds to UC:  Remove the local account of an employee  |
+| ------------- |:-------------:| 
+| Step#        | Description  |
+|  1     | When an employee leaves the company, the Manager selects the corresponding ID of the local account|
+|  2     | Manager provides to delete the corresponding local account|
+
+
 # Glossary
 
 
