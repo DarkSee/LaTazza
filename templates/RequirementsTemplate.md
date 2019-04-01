@@ -126,9 +126,11 @@ John manages the order using the application and the visitor pays cash.
 |  FR1.1    | Manage payments                                |
 |  FR1.2    | Send the order to warehouse                    | 
 |  FR2      | Sell capsules to clients                       |
-|  FR3      | Manage the local accounts balance              |
-|  FR3.1    | Add cash to wallet                             |
-|  FR3.2    | Decrease wallet balance by selt capsules'price |
+|  FR3      | Manage local accounts                          |
+|  F3.1     | Add new local account                          |
+|  FR3.2    | Add cash to wallet                             |
+|  FR3.3    | Decrease wallet balance by selt capsules'price |
+|  FR3.4    | Delete local account                           |
 |  FR4      | Show the current capsules available            |
 
 ## Non Functional Requirements
