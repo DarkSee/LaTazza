@@ -176,12 +176,14 @@ actor "Banking System" as bs
 
 m -- (sell capsules)
 m -- (make an order)
+m -- (show summary)
 m -- (add credit)
 m -- (add new local account)
 m -- (remove local account)
 (make an order) -- bs
 (make an order) -- w
 (make an order) .> (update summary) : include
+
 
 (sell capsules) .> (accept payment): include
 (accept payment) .> (use account balance for employee): include
@@ -237,6 +239,15 @@ m -- (remove local account)
 |  Post condition     | The local account of the employee is no longer available|
 |  Nominal Scenario     | The manager removes the account of the employee.  |
 |  Variants     | If the manager selects the wrong ID, he/she has the possibility to revert the operation before doing other actions. |
+
+### Use case 6, Show summary
+
+| Actors Involved        |  |
+| ------------- |:-------------:| 
+|  Precondition     | Manager doesn't remember how many capsules are left|  
+|  Post condition     | The manager takes note of the number of capsules avaiable per type and the cash account |
+|  Nominal Scenario     | The manager wants to know the number of capsules avaiable per type and the cash account so he press the "Show summary" button |
+|  Variants     | A previous sale of bevarages was not successful. Therefore the number of capsules available per type is not updated correctly |
 
 
 # Relevant scenarios
