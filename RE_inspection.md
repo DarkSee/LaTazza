@@ -1,5 +1,6 @@
 ## Inspection Log
-
+| **Infos** | **Description** |
+| --- | -- |
 | Date | |
 | Place | |
 | Object of inspection| | 
