@@ -247,7 +247,7 @@ m -- (remove local account)
 |  Precondition     | Manager doesn't remember how many capsules are left|  
 |  Post condition     | The manager takes note of the number of capsules avaiable per type and the cash account |
 |  Nominal Scenario     | The manager wants to know the number of capsules avaiable per type and the cash account so he press the "Show summary" button |
-|  Variants     | A previous sale of bevarages was not successful. Therefore the number of capsules available per type is not updated correctly |
+|  Variants     ||
 
 
 # Relevant scenarios
