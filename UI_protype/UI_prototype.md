@@ -5,7 +5,7 @@
 ![Remove_Account](Remove_Account.png "")
 ![Success](Success.png "")
 ![Recharge_Account](Recharge_Account.png "")
-![Success](Success.png "")
+![Success_Charge](Success_charge.jpg "")
 ![Sell_Capsules](Sell_Capsules.png "")
 ![Success_with_balance_acc](Success_with_balance_acc.png "")
 ![Order_Management](Order_Management.png "")
