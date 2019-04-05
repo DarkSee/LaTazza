@@ -143,20 +143,21 @@ John manages the order using the application and the visitor pays cash.
 |  FR3.3    | Decrease wallet balance by selt capsules'price |
 |  FR3.4    | Delete local account                           |
 |  FR4      | Show the current capsules available            |
+|  FR5      | Confirm order delivery for updating the summary|
 
 ## Non Functional Requirements
 
 
 | ID        | Type (efficiency, reliability, ..)           | Description  | Refers to |
 | ------------- |:-------------:| :-----:| -----:|
-|  NFR1     | Reliability | System downtime should be less than 1 hour per day               | FR1 |
-|  NFR2     | Efficiency  | Payment should be managed in less than 1 min                     | FR2, FR3|
-|  NFR3     | Efficiency  | Order should be comnunicated to warehous in less than half a day | FR1 |
-|  NFR4     | Privacy     | Sensitive datas should be preserved                              | FR1, FR2 |
+|  NFR1     | Reliability | System downtime should be less than 1 hour per day               | FR1           |
+|  NFR2     | Efficiency  | Payment should be managed in less than 1 min                     | FR2, FR3      | 
+|  NFR3     | Efficiency  | Order should be comnunicated to warehous in less than half a day | FR1           |
+|  NFR4     | Privacy     | Sensitive datas should be preserved                              | FR1, FR2      |
 |  NFR5     | Domain      | Payment should be made in euros                                  | FR1, FR2, FR3 |
 |  NFR6     | Reliability | Show the correct amount of capsules available at the moment, refresh automatically after each sale | FR4|
 |  NFR7     | Efficiency  | Payment should be managed in less than 1 min | FR2|
-|  NFR8     | Legislation | Debt should be kept above 50€ | FR3 |
+|  NFR8     | Safeguard   | Debt should be kept above 50€ | FR3 |
 
 
 
@@ -250,7 +251,15 @@ m -- (remove local account)
 |  Precondition       | Manager doesn't remember how many capsules are left and how much money there is in the cash account|  
 |  Post condition     | The manager takes note of the number of capsules avaiable per type and the cash account |
 |  Nominal Scenario   | The manager wants to know the number of capsules avaiable per type and the cash account so he press the "Show summary" button in the main Menu of the LaTazza application|
-|  Variants     ||
+|  Variants           | - |
+
+### Use case 7, Confirm order delivery
+| Actors Involved        |  |
+| ------------- |:-------------:| 
+|  Precondition       | An order is just been delivered to the company|  
+|  Post condition     | Summary has been updated with the new capsules amount |
+|  Nominal Scenario   | After order delivery, manager confirms the delivery of the order on the application, using the dedicated interface. Then the summary is updated according to the number of capsules received. |
+|  Variants           | The number/types of capsules delivered does not correspond to the capsules ordered, so there's a mismatch with the summary infos and the real supplies.|
 
 
 # Relevant scenarios
@@ -312,16 +321,27 @@ m -- (remove local account)
 | Scenario ID: SC5        | Corresponds to UC:  Remove the local account of an employee  |
 | ------------- |:-------------:| 
 | Step#        | Description  |
-|  1     | When an employee leaves the company, the Manager selects the corresponding ID of the local account|
+|  1     | Manager selects the corresponding ID of the local account|
 |  2     | Manager provides to delete the corresponding local account|
 
-## Scenario 5
+## Scenario 6
 
 | Scenario ID: SC6        | Corresponds to UC:  Show summary  |
 | ------------- |:-------------:| 
 | Step#        | Description  |
 |  1     | In order to know the number of capsules per type available to be sold directly, the Manager selects the "Show Summary" button on the main page of the LaTazza|
 |  2     | In order to know the amount of money present in the cash account, the Manager selects the "Show Summary" button on the main page of the LaTazza|
+
+
+## Scenario 7
+
+| Scenario ID: SC6        | Corresponds to UC:  Confirm order delivery  |
+| ------------- |:-------------:| 
+| Step#        | Description  |
+|  1     | Manager clicks on the interface dedicated to the confirm of the order delivery|
+|  2     | Manager writes the order number on the interface, then confirms. |
+|  3     | LaTazza adds the number of capsules contained in that order to the summary. |
+|  4     | Manager closes the windows and return to the home page. | 
 
 # Glossary
 
@@ -349,7 +369,6 @@ class Box {
 class Order{
   +ID
   +status
-  +trackingNumber
 }
 
 class Wallet {
@@ -387,7 +406,6 @@ class "Buying interface" {
  +selectTypeOfCapsules()
  +selectNumberOfBoxes()
  +commitOrder()
- +modifyOrder()
  +showOrderStatus()
  +updateSummaryAfterDelivery()
 
