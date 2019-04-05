@@ -58,6 +58,15 @@ left to right direction
 skinparam packageStyle rectangle
 
 actor Manager as M
+note left
+        We haven't included in the Context
+        Diagram "Visitors" and "Employees" 
+        as we have assumed that the two entities
+        do not interact with the system.
+        We assumed that the manager is the only one
+        who interacts with the LaTazza application.
+end note
+
 actor "Mail System/Warehouse ?" as W
 actor Summary as S
 actor "Banking System" as BS
@@ -72,11 +81,6 @@ rectangle system {
     
 }
 
-note left 
-        We haven't included in the Context Diagram "Visitors" and "Employees" 
-        as we have assumed that the two entities do not interact with the system.
-        We assumed that the manager is the only one who interacts with the LaTazza application.
-end note
 
 ```
 
