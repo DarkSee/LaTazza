@@ -244,9 +244,9 @@ m -- (remove local account)
 
 | Actors Involved        |  |
 | ------------- |:-------------:| 
-|  Precondition     | Manager doesn't remember how many capsules are left|  
+|  Precondition       | Manager doesn't remember how many capsules are left and how much money there is in the cash account|  
 |  Post condition     | The manager takes note of the number of capsules avaiable per type and the cash account |
-|  Nominal Scenario     | The manager wants to know the number of capsules avaiable per type and the cash account so he press the "Show summary" button |
+|  Nominal Scenario   | The manager wants to know the number of capsules avaiable per type and the cash account so he press the "Show summary" button in the main Menu of the LaTazza application|
 |  Variants     ||
 
 
@@ -306,6 +306,13 @@ m -- (remove local account)
 |  1     | When an employee leaves the company, the Manager selects the corresponding ID of the local account|
 |  2     | Manager provides to delete the corresponding local account|
 
+## Scenario 5
+
+| Scenario ID: SC6        | Corresponds to UC:  Show summary  |
+| ------------- |:-------------:| 
+| Step#        | Description  |
+|  1     | In order to know the number of capsules per type available to be sold directly, the Manager selects the "Show Summary" button on the main page of the LaTazza|
+|  2     | In order to know the amount of money present in the cash account, the Manager selects the "Show Summary" button on the main page of the LaTazza|
 
 # Glossary
 
