@@ -28,8 +28,7 @@ Version: 0.0.2
 
 
 We assumed that:
-- The manager is the only one who interacts with the LaTazza application.
-- Clients refer manager in order to required new bevarages.
+
 - The warehouse receives order requests by email, so he doesn't interact with the application.
 
 
@@ -171,6 +170,11 @@ skinparam packageStyle rectangular
 
 actor warehouse as w
 actor manager as m
+note left 
+        Clients orally ask to manager
+        in order to get new capsules 
+end note
+
 actor "Banking System" as bs
 
 
