@@ -43,10 +43,10 @@ We assumed that:
 |         Manager          |       A specialized employee, that can handle the use of LaTazza for supplying and selling capsules      | 
 |        Summary       |        Archive that records all the current amount of capsules available | 
 |         Others          |       Persons that are not allowed to use the capsule vending machine      | 
-|        Warehouse        |        Place where all capsules are stores and ready to be delivered | 
+|        Warehouse        |        Place where all capsules are stores and ready to be shipped | 
 |        Banking System        |        The system for managing the payment method between manager and warehouse |
-|        Capsules           |         Product to be selt/bought  |
-
+|        Capsules           |         Product to be sold/bought  |
+|        Mail System       |    The system for granted communication between manager and warehouse|
 
 
 
@@ -58,10 +58,10 @@ left to right direction
 skinparam packageStyle rectangle
 
 actor Manager as M
-actor Warehouse as W
+actor "Mail System/Warehouse ?" as W
 actor Summary as S
 actor "Banking System" as BS
-actor "Capsules" as C
+
 
 rectangle system {
   (LaTazza) as LT
@@ -69,7 +69,7 @@ rectangle system {
    LT -- S
    LT -- W
    LT -- BS
-   C -- LT  
+    
 }
 
 note left 
@@ -77,10 +77,6 @@ note left
         as we have assumed that the two entities do not interact with the system.
         We assumed that the manager is the only one who interacts with the LaTazza application.
 end note
-
-
-
-
 
 ```
 
@@ -91,14 +87,12 @@ end note
 | Actor | Logical Interface | Physical Interface  |
 | ------------- |:-------------:| -----:|
 |   Manager     |     GUI       |    Screen , keyboard|
-|  Warehouse    |     email services       |Internet connection|
-| Capsule       |   bar code      |bar code reader|
+|  Mail System    |     APIs       |Internet connection|
 | Banking System | Web service, APIs |Internet connection |
 
 # Stories and personas
 
-
-Persona1 : THE MANAGER
+**PERSONA1** : THE MANAGER
 
 John Martin
 42, manager of a company, divorced
