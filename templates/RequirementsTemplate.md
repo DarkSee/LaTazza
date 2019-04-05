@@ -174,12 +174,15 @@ actor warehouse as w
 actor manager as m
 actor "Banking System" as bs
 
+
 m -- (sell capsules)
 m -- (make an order)
+m -- (confirm order delivery)
 m -- (show summary)
-m -- (add credit)
+m -- (add credit to local account)
 m -- (add new local account)
 m -- (remove local account)
+
 (make an order) -- bs
 (make an order) -- w
 (make an order) .> (update summary) : include
@@ -189,7 +192,7 @@ m -- (remove local account)
 (accept payment) .> (use account balance for employee): include
 (accept payment) .> (use cash for visitors) : include
 (sell capsules) .> (update summary) : include
-(add credit) .> (update wallet) : include
+(add credit to local account) .> (update wallet) : include
 
 ```
 
