@@ -204,7 +204,7 @@ m -- (remove local account)
 | ------------- |:-------------:| 
 |  Precondition     | There are not enough capsules|  
 |  Post condition     | Now there are enough capsules|
-|  Nominal Scenario     | The manager selects the number of boxes needed, sends an order to the warehouse. The application updates the summary after receiving the boxes  |
+|  Nominal Scenario     | The manager selects the number of boxes needed, sends an order to the warehouse paying with a credit card.If the operation is successful, an order number is automatically generated and then it will be used by the Manager to confirm that the order is delivered.  The application updates the summary after receiving the boxes  |
 |  Variants     | If the delivered order is incorrect, the corresponding value will be refund to the manager. If the payment is unsuccessful, order will be cancelled. |
 
 ### Use case 2, Sell capsules
@@ -263,9 +263,15 @@ m -- (remove local account)
 | Step#        | Description  |
 |  1     | The manager selects the number of boxes needed | 
 |  2     | The manager selects the type of capsules|
-|  3    | The manager confirms the order|
-|  4    |  The application sends an email with order details to the warehouse|
-|  5     |  The application update the summary after receiving the boxes|
+|  3     | The manager selects the circuit used for the payment with credit card|
+|  4     | The manager inserts his name and surname in the corresponfing fields|
+|  5     | The manager inserts the credit card number used to pay|
+|  6     | The manager inserts the CVV number|
+|  7     | The manager enters the expiry month and the expiry year of the credit card used|
+|  8     | The manager confirms the order|
+|  9     | An order number is automatically generated |
+|  10    | The application sends an email with order details to the warehouse|
+|  11    | The application update the summary after receiving the boxes|
 
 
 ## Scenario 2
