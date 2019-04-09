@@ -56,6 +56,9 @@ note left
         do not interact with the system.
         We assumed that the manager is the only one
         who interacts with the LaTazza application.
+        
+        There are no vending machines:
+        Manger can handle the distirbution of capsules himself 
 end note
 
 actor "Mail System" as MS
