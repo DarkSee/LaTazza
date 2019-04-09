@@ -7,7 +7,6 @@ Date: 26th March 2019
 Version: 0.0.2
 
 # Contents
-- [Notes](#notes)
 - [Stakeholders](#stakeholders)
 - [Context Diagram and interfaces](#context-diagram-and-interfaces)
 	+ [Context Diagram](#context-diagram)
@@ -23,13 +22,6 @@ Version: 0.0.2
 	+ [Relevant scenarios](#relevant-scenarios)
 - [Glossary](#glossary)
 - [System design](#system-design)
-
-# Notes
-
-
-We assumed that:
-
-- The warehouse receives order requests by email, so he doesn't interact with the application.
 
 
 # Stakeholders
