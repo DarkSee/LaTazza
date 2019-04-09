@@ -12,6 +12,6 @@
 
 | Problem ID | Location | Problem description | Status | Type | Gravity |
 | ---------- | -------- | ------------------- | ------ | ---- | ------- |
-|     1      |   NFR    | Payments should be performed also in other currencies   |  Open  | Ambiguity      | Normal |
-|     2      |   NFR    | How will be data preserved?                             |  Open  | Incompleteness | Normal |
-|     3      |   NFR    | Debt threshold should be lower                          |  Open  | Un-reality     | Minor  |
+|     1      |   NFR    | Payments should be performed also in other currencies   |  Closed  | Ambiguity      | Normal |
+|     2      |   NFR    | How will be data preserved?                             |  Closed  | Incompleteness | Normal |
+|     3      |   NFR    | Debt threshold should be lower                          |  Closed  | Un-reality     | Minor  |
