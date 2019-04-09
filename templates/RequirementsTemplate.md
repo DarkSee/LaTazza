@@ -42,7 +42,7 @@ We assumed that:
 |         Manager          |       A specialized employee, that can handle the use of LaTazza for supplying and selling capsules      | 
 |        Summary       |        Archive that records all the current amount of capsules available | 
 |         Others          |       Persons that are not allowed to use the capsule vending machine      | 
-|        Warehouse        |        Place where all capsules are stores and ready to be shipped | 
+|        Warehouse        |        Place where all capsules are stored and ready to be shipped | 
 |        Banking System        |        The system for managing the payment method between manager and warehouse |
 |        Capsules           |         Product to be sold/bought  |
 |        Mail System       |    The system for granted communication between manager and warehouse|
@@ -66,7 +66,7 @@ note left
         who interacts with the LaTazza application.
 end note
 
-actor "Mail System/Warehouse ?" as W
+actor "Mail System" as MS
 actor Summary as S
 actor "Banking System" as BS
 
@@ -75,7 +75,7 @@ rectangle system {
   (LaTazza) as LT
    M -- LT
    LT -- S
-   LT -- W
+   LT -- MS
    LT -- BS
     
 }
@@ -168,7 +168,8 @@ John manages the order using the application and the visitor pays cash.
 left to right direction
 skinparam packageStyle rectangular
 
-actor warehouse as w
+actor "Mail System" as ms
+actor summary as s
 actor manager as m
 note left 
         Clients orally ask to manager
@@ -181,13 +182,16 @@ actor "Banking System" as bs
 m -- (sell capsules)
 m -- (make an order)
 m -- (confirm order delivery)
+(confirm order delivery) -- s
 m -- (show summary)
+(show summary) -- s
 m -- (add credit to local account)
 m -- (add new local account)
 m -- (remove local account)
+(update summary) -- s
 
 (make an order) -- bs
-(make an order) -- w
+(make an order) -- ms
 (make an order) .> (update summary) : include
 
 
@@ -337,7 +341,7 @@ m -- (remove local account)
 
 ## Scenario 7
 
-| Scenario ID: SC6        | Corresponds to UC:  Confirm order delivery  |
+| Scenario ID: SC7        | Corresponds to UC:  Confirm order delivery  |
 | ------------- |:-------------:| 
 | Step#        | Description  |
 |  1     | Manager clicks on the interface dedicated to the confirm of the order delivery|
@@ -396,6 +400,10 @@ Manager "1" -- "1" Summary : updates
 ```plantuml
 top to bottom direction
 
+class Computer {
+    
+}
+
 class "Application-main" {
  +makeOrder()
  +sellCapsules()
@@ -440,4 +448,5 @@ class "Account management interface" {
 "Buying interface" -- "Application-main"
 "Account management interface" -- "Application-main"
 "Account management interface" -- "Selling interface"
+"Application-main" --o Computer
 ```
