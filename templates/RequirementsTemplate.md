@@ -142,14 +142,13 @@ John manages the order using the application and the visitor pays cash.
 
 | ID        | Type (efficiency, reliability, ..)           | Description  | Refers to |
 | ------------- |:-------------:| :-----:| -----:|
-|  NFR1     | Reliability | System downtime should be less than 1 hour per day               | FR1           |
-|  NFR2     | Efficiency  | Payment should be managed in less than 1 min                     | FR2, FR3      | 
-|  NFR3     | Efficiency  | Order should be comnunicated to warehous in less than half a day | FR1           |
-|  NFR4     | Privacy     | Sensitive datas should be preserved via E2EE                              | FR1, FR2      |
-|  NFR5     | Domain      | Payment should be made in any currencies (defined while installing)                                  | FR1, FR2, FR3 |
-|  NFR6     | Reliability | Show the correct amount of capsules available at the moment, refresh automatically after each sale | FR4|
-|  NFR7     | Efficiency  | Payment should be managed in less than 1 min | FR2|
-|  NFR8     | Safeguard   | Debt should be kept above 10€ | FR3 |
+|  NFR1     | Reliability | System downtime should be less than 1 hour per day                                                 | FR1           |
+|  NFR2     | Efficiency  | Payment should be managed in less than 1 min                                                       | FR2, FR3      | 
+|  NFR3     | Efficiency  | Order should be comnunicated to warehouse in less than half a day                                   | FR1           |
+|  NFR4     | Privacy     | Sensitive datas should be preserved via E2EE                                                       | FR1, FR2      |
+|  NFR5     | Domain      | Payment should be made in any currencies (defined while installing)                                | FR1, FR2, FR3 |
+|  NFR6     | Reliability | Show the correct amount of capsules available at the moment, refresh automatically after each sale | FR4           |
+|  NFR7     | Safeguard   | Debt should be kept above 10€ | FR3 |
 
 
 
@@ -202,7 +201,7 @@ m -- (remove local account)
 
 ### Use case 1, Make an order
 
-| Actors Involved        |  |
+| Actors Involved        | Manager, Mail System, Banking System |
 | ------------- |:-------------:| 
 |  Precondition     | There are not enough capsules|  
 |  Post condition     | Now there are enough capsules|
@@ -211,7 +210,7 @@ m -- (remove local account)
 
 ### Use case 2, Sell capsules
 
-| Actors Involved        |  |
+| Actors Involved        | Manager |
 | ------------- |:-------------:| 
 |  Precondition     | Client asks for capsules|  
 |  Post condition     | Client has got capsules to use|
@@ -220,7 +219,7 @@ m -- (remove local account)
 
 ### Use case 3, Add credit to local account's wallet
 
-| Actors Involved        |  |
+| Actors Involved        | Manager |
 | ------------- |:-------------:| 
 |  Precondition     | Employees ask for adding credit to their account|  
 |  Post condition     | The wallet balance is increased |
@@ -229,7 +228,7 @@ m -- (remove local account)
 
 ### Use case 4, Add new local account
 
-| Actors Involved        |  |
+| Actors Involved        | Manager |
 | ------------- |:-------------:| 
 |  Precondition     | A new employee is hired|  
 |  Post condition     | The new employee has got his local account|
@@ -238,7 +237,7 @@ m -- (remove local account)
 
 ### Use case 5, Remove local account
 
-| Actors Involved        |  |
+| Actors Involved        | Manager |
 | ------------- |:-------------:| 
 |  Precondition     | An employee leaves the company|  
 |  Post condition     | The local account of the employee is no longer available|
@@ -247,7 +246,7 @@ m -- (remove local account)
 
 ### Use case 6, Show summary
 
-| Actors Involved        |  |
+| Actors Involved        | Manager, Summary |
 | ------------- |:-------------:| 
 |  Precondition       | Manager doesn't remember how many capsules are left and how much money there is in the cash account|  
 |  Post condition     | The manager takes note of the number of capsules avaiable per type and the cash account |
@@ -255,7 +254,7 @@ m -- (remove local account)
 |  Variants           | - |
 
 ### Use case 7, Confirm order delivery
-| Actors Involved        |  |
+| Actors Involved        | Manager, Summary |
 | ------------- |:-------------:| 
 |  Precondition       | An order is just been delivered to the company|  
 |  Post condition     | Summary has been updated with the new capsules amount |
@@ -277,7 +276,7 @@ m -- (remove local account)
 |  4     | The manager inserts his name and surname in the corresponfing fields|
 |  5     | The manager inserts the credit card number used to pay|
 |  6     | The manager inserts the CVV number|
-|  7     | The manager enters the expiry month and the expiry year of the credit card used|
+|  7     | The manager enters the expiring month and the expiring year of the credit card used|
 |  8     | The manager confirms the order|
 |  9     | An order number is automatically generated |
 |  10    | The application sends an email with order details to the warehouse|
@@ -383,7 +382,7 @@ class Summary {
 }
 
 Manager --|> Employee
-Box "1" o-- "50" Capsule : contains
+Box "50" o-- "1" Capsule : contains
 Order "1..*" o-- "1" Box : made up of
 Manager "1" -- "1..*" Order : sends
 Employee "1" <|-- "1" Wallet : has
