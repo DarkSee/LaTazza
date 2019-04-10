@@ -424,53 +424,37 @@ Manager "1" -- "1" Summary : updates
 ```plantuml
 top to bottom direction
 
-class Computer {
-    
+
+class LaTazzaSystem {
 }
 
-class "Application-main" {
- +makeOrder()
+class Computer {
+     +makeOrder()
  +sellCapsules()
  +showTotalBalance()
  +addCreditToWallet()
-
-}
-
-class "Buying interface" {
  +selectTypeOfCapsules()
  +selectNumberOfBoxes()
  +commitOrder()
  +showOrderStatus()
  +updateSummaryAfterDelivery()
-
-}
-
-class "Selling interface" {
- +selectCapsuleToSell()
+  +selectCapsuleToSell()
  +confirmSale&Update()
-
-}
-
-class "Summary interface" {
- +showTotalBalance()
+  +showTotalBalance()
  +showCurrentInventory()
-
-}
-
-class "Account management interface" {
  +createNewAccount()
  +deleteAccount()
  +addCredit()
  +decreaseCredit()
- +showWalletBalance()
+ +showWalletBalance(
 
-} 
+}
+LaTazzaSystem o-- Computer
 
 
-"Selling interface" -- "Application-main"
-"Summary interface" -- "Application-main"
-"Buying interface" -- "Application-main"
-"Account management interface" -- "Application-main"
-"Account management interface" -- "Selling interface"
-"Application-main" --o Computer
+class MailGateway {
+  +sendOrder()
+}
+
+Computer -- MailGateway
 ```
