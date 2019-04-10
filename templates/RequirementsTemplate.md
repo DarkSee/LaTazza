@@ -31,8 +31,7 @@ Version: 0.0.2
 | ----------------- |:-----------:|
 |         Employee          |       Person who works in a workplace where LaTazza is used so that he/she can buy capsules     | 
 |         Visitor          |       Person who does not work in the company where LaTazza is used but that can buy coffee as well as the employees      |
-|         Manager          |       A specialized employee, that can handle the use of LaTazza for supplying and selling capsules      | 
-|        Summary       |        Archive that records all the current amount of capsules available | 
+|         Manager          |       A specialized employee, that can handle the use of LaTazza for supplying and selling capsules      |  
 |         Others          |       Persons that are not allowed to use the capsule vending machine      | 
 |        Warehouse        |        Place where all capsules are stored and ready to be shipped | 
 |        Banking System        |        The system for managing the payment method between manager and warehouse |
@@ -62,14 +61,12 @@ note left
 end note
 
 actor "Mail System" as MS
-actor Summary as S
 actor "Banking System" as BS
 
 
 rectangle system {
   (LaTazza) as LT
    M -- LT
-   LT -- S
    LT -- MS
    LT -- BS
     
@@ -169,7 +166,6 @@ left to right direction
 skinparam packageStyle rectangular
 
 actor "Mail System" as ms
-actor summary as s
 actor manager as m
 note left 
         Clients orally ask to manager
@@ -182,13 +178,10 @@ actor "Banking System" as bs
 m -- (sell capsules)
 m -- (make an order)
 m -- (confirm order delivery)
-(confirm order delivery) -- s
 m -- (show summary)
-(show summary) -- s
 m -- (add credit to local account)
 m -- (add new local account)
 m -- (remove local account)
-(update summary) -- s
 
 (make an order) -- bs
 (make an order) -- ms
@@ -252,7 +245,7 @@ m -- (remove local account)
 
 ### Use case 6, Show summary
 
-| Actors Involved        | Manager, Summary |
+| Actors Involved        | Manager |
 | ------------- |:-------------:| 
 |  Precondition       | Manager doesn't remember how many capsules are left and how much money there is in the cash account|  
 |  Post condition     | The manager takes note of the number of capsules avaiable per type and the cash account |
@@ -260,7 +253,7 @@ m -- (remove local account)
 |  Variants           | - |
 
 ### Use case 7, Confirm order delivery
-| Actors Involved        | Manager, Summary |
+| Actors Involved        | Manager|
 | ------------- |:-------------:| 
 |  Precondition       | An order is just been delivered to the company|  
 |  Post condition     | Summary has been updated with the new capsules amount |
