@@ -143,7 +143,7 @@ John manages the order using the application and the visitor pays cash.
 |  NFR1     | Reliability | System downtime should be less than 1 hour per day                                                 | FR1           |
 |  NFR2     | Efficiency  | Payment should be managed in less than 1 min                                                       | FR2, FR3      | 
 |  NFR3     | Efficiency  | Order should be comnunicated to warehouse in less than half a day                                   | FR1           |
-|  NFR4     | Privacy     | Sensitive datas should be preserved via E2EE                                                       | FR1, FR2      |
+|  NFR4     | Privacy     | Sensitive datas should be preserved                                                      | FR1, FR2      |
 |  NFR5     | Domain      | Payment should be made in any currencies (defined while installing)                                | FR1, FR2, FR3 |
 |  NFR6     | Reliability | Show the correct amount of capsules available at the moment, refresh automatically after each sale | FR4           |
 |  NFR7     | Safeguard   | Debt should be kept below 10€ | FR3 |
