@@ -382,6 +382,9 @@ m -- (remove local account)
 class Manager {
 }
 
+class Sale {
+}
+
 class Visitor {
   +name
   +surname
@@ -416,9 +419,12 @@ Manager --|> Employee
 Box "1" o-- "50" Capsule : contains
 Order "1" o-- "1..*" Box : made up of
 Manager "1" -- "1..*" Order : sends
-Manager "1" -- "1..*" Visitor : sells to
-Manager "1" -- "1..*" Employee : sells to
-Manager "1" -- "1" Summary : updates
+Manager "1" -- "1..*" Sale : performs a
+Sale "1..*" -- "1..*" Visitor : to
+Sale "1..*" -- "1..*" Employee : to
+Order "1" -- "1" Summary : updates
+Sale "1..*" -- "1" Summary : updates
+
 ```
 # System Design
 ```plantuml
