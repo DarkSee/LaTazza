@@ -232,7 +232,7 @@ m -- (remove local account)
 |  Precondition     | A new employee is hired|  
 |  Post condition     | The new employee has got his local account|
 |  Nominal Scenario     | The manager adds a new account linked to the new hired employee, setting his balance to zero.  |
-|  Variants     | If the new emloyee wants to recharge immediately his wallet, the balance will not be set to zero but to the amount charged. |
+|  Variants     | If the new emloyee wants to recharge immediately his wallet, the balance will not be set to zero but to the amount charged. ID with a wrong format, operation refused. |
 
 ### Use case 5, Remove local account
 
@@ -264,7 +264,9 @@ m -- (remove local account)
 # Relevant scenarios
 
 
-## Scenario 1
+## Scenario 1 - Order successfully submitted
+ Precondition: There are not enough capsules  
+ Post condition: Now there are enough capsules
 
 | Scenario ID: SC1        | Corresponds to UC:  Make an order|
 | ------------- |:-------------:| 
@@ -282,7 +284,9 @@ m -- (remove local account)
 |  11    | The application update the summary after receiving the boxes|
 
 
-## Scenario 2
+## Scenario 2 - Capsules successfully sold
+ Precondition: Client asks for capsules  
+ Post condition: Client has got capsules to use
 
 | Scenario ID: SC2        | Corresponds to UC:  Sell capsules to employee|
 | ------------- |:-------------:| 
@@ -295,9 +299,11 @@ m -- (remove local account)
 | 6      | If the employee pays with his wallet, the application updates his balance|
 
 
-## Scenario 3
+## Scenario 3 - Local account successfully recharged
+ Precondition: Employees ask for adding credit to their account  
+ Post condition: The wallet balance is increased
 
-| Scenario ID: SC3        | Corresponds to UC:  Add credit to local account's wallet|
+| Scenario ID: SC3        | Corresponds to UC:  Add credit to local account|
 | ------------- |:-------------:| 
 | Step#        | Description  |
 |  1     | Manager selects the local account corresponding to the employee | 
@@ -306,7 +312,9 @@ m -- (remove local account)
 |  4     | The application shows a popup that confirms that the action had succes |
 |  5     | The application updates the balance related to that account|
 
-## Scenario 4
+## Scenario 4 - New local account is created
+ Precondition: A new employee is hired  
+ Post condition: The new employee has got his local account
 
 | Scenario ID: SC4        | Corresponds to UC:  Add new local account|
 | ------------- |:-------------:| 
@@ -315,7 +323,9 @@ m -- (remove local account)
 |  2     | Manager sets the ID of the account with the employee's ID|
 |  3     | Manager sets to 0€ the local account balance |
 
-## Scenario 5
+## Scenario 5 - Local account is removed
+ Precondition: An employee leaves the company  
+ Post condition: The local account of the employee is no longer available
 
 | Scenario ID: SC5        | Corresponds to UC:  Remove the local account of an employee  |
 | ------------- |:-------------:| 
@@ -323,7 +333,9 @@ m -- (remove local account)
 |  1     | Manager selects the corresponding ID of the local account|
 |  2     | Manager provides to delete the corresponding local account|
 
-## Scenario 6
+## Scenario 6 - Summary is successfully printed
+ Precondition: Manager doesn't remember how many capsules are left and how much money there is in the cash account  
+ Post condition: The manager takes note of the number of capsules avaiable per type and the cash account
 
 | Scenario ID: SC6        | Corresponds to UC:  Show summary  |
 | ------------- |:-------------:| 
@@ -332,7 +344,9 @@ m -- (remove local account)
 |  2     | In order to know the amount of money present in the cash account, the Manager selects the "Show Summary" button on the main page of the LaTazza|
 
 
-## Scenario 7
+## Scenario 7 - Summary successfully updated after delivery
+ Precondition: An order is just been delivered to the company  
+ Post condition: Summary has been updated with the new capsules amount
 
 | Scenario ID: SC7        | Corresponds to UC:  Confirm order delivery  |
 | ------------- |:-------------:| 
