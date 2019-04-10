@@ -146,7 +146,7 @@ John manages the order using the application and the visitor pays cash.
 |  NFR4     | Privacy     | Sensitive datas should be preserved via E2EE                                                       | FR1, FR2      |
 |  NFR5     | Domain      | Payment should be made in any currencies (defined while installing)                                | FR1, FR2, FR3 |
 |  NFR6     | Reliability | Show the correct amount of capsules available at the moment, refresh automatically after each sale | FR4           |
-|  NFR7     | Safeguard   | Debt should be kept above 10€ | FR3 |
+|  NFR7     | Safeguard   | Debt should be kept below 10€ | FR3 |
 
 
 
