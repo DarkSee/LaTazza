@@ -387,6 +387,10 @@ class Visitor {
   +surname
 }
 
+class Employee {
+  +ID
+  +balance
+}
 class Capsule {
   +IDType
   +pricePerUnit
@@ -403,11 +407,6 @@ class Order{
   +status
 }
 
-class Wallet {
-  +ID
-  +balance
-}
-
 class Summary {
    +cashAccount
    +numberOfCapsulePerType
@@ -417,7 +416,6 @@ Manager --|> Employee
 Box "1" o-- "50" Capsule : contains
 Order "1" o-- "1..*" Box : made up of
 Manager "1" -- "1..*" Order : sends
-Employee "1" <|-- "1" Wallet : has
 Manager "1" -- "1..*" Visitor : sells to
 Manager "1" -- "1..*" Employee : sells to
 Manager "1" -- "1" Summary : updates
