@@ -226,7 +226,7 @@ m -- (remove local account)
 |  Precondition     | Employees ask for adding credit to their account|  
 |  Post condition     | The wallet balance is increased |
 |  Nominal Scenario     | Manager takes money from an employee and then add credit to the wallet of the account related to that employee.  |
-|  Variants     | The balance can be increased or decreased by a different amount than desired, due to typos. The increased wallet balance can belong to the wrong account. Possibility to undo should be implemented. |
+|  Variants     | The balance can be increased by a different amount than desired, due to typos. The increased wallet balance can belong to the wrong account. |
 
 ### Use case 5, Add new local account
 
