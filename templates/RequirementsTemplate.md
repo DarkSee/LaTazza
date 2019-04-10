@@ -4,7 +4,7 @@ Authors: ["Hip hip"] team
 
 Date: 26th March 2019
 
-Version: 0.0.2
+Version: 0.0.3
 
 # Contents
 - [Stakeholders](#stakeholders)
