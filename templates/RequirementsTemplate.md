@@ -195,8 +195,8 @@ m -- (remove local account)
 
 | Actors Involved        | Manager, Mail System, Banking System |
 | ------------- |:-------------:| 
-|  Precondition     | There are not enough capsules|  
-|  Post condition     | Now there are enough capsules|
+|  Precondition     | |  
+|  Post condition     | An order of capsules is done|
 |  Nominal Scenario     | The manager selects the number of boxes needed, sends an order to the warehouse paying with a credit card.If the operation is successful, an order number is automatically generated and then it will be used by the Manager to confirm that the order is delivered.  The application updates the summary after receiving the boxes  |
 |  Variants     | If the delivered order is incorrect, the corresponding value will be refund to the manager. If the payment is unsuccessful, order will be cancelled. |
 
@@ -268,8 +268,8 @@ m -- (remove local account)
 
 
 ## Scenario 1 - Order successfully submitted
- Precondition: There are not enough capsules  
- Post condition: Now there are enough capsules
+ Precondition:   
+ Post condition: An order of capsules is done
 
 | Scenario ID: SC1        | Corresponds to UC:  Make an order|
 | ------------- |:-------------:| 
