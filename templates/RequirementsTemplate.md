@@ -32,11 +32,6 @@ Version: 0.0.3
 |         Employee          |       Person who works in a workplace where LaTazza is used so that he/she can buy capsules     | 
 |         Visitor          |       Person who does not work in the company where LaTazza is used but that can buy coffee as well as the employees      |
 |         Manager          |       A specialized employee, that can handle the use of LaTazza for supplying and selling capsules      |  
-|         Others          |       Persons that are not allowed to use the capsule vending machine      | 
-|        Warehouse        |        Place where all capsules are stored and ready to be shipped | 
-|        Banking System        |        The system for managing the payment method between manager and warehouse |
-|        Capsules           |         Product to be sold/bought  |
-|        Mail System       |    The system for granted communication between manager and warehouse|
 
 
 
