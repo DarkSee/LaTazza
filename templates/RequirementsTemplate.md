@@ -311,7 +311,7 @@ m -- (remove local account)
  Precondition: Employee asks for capsules  
  Post condition: Employee has got capsules to use
 
-| Scenario ID: SC2        | Corresponds to UC:  Sell capsules to employee|
+| Scenario ID: SC3        | Corresponds to UC:  Sell capsules to employee|
 | ------------- |:-------------:| 
 | Step#        | Description  |
 |  1     | Manager selects the local account corresponding to the employee | 
@@ -327,7 +327,7 @@ m -- (remove local account)
  Precondition: Employees ask for adding credit to their account  
  Post condition: The wallet balance is increased
 
-| Scenario ID: SC3        | Corresponds to UC:  Add credit to local account|
+| Scenario ID: SC4        | Corresponds to UC:  Add credit to local account|
 | ------------- |:-------------:| 
 | Step#        | Description  |
 |  1     | Manager selects the local account corresponding to the employee | 
@@ -340,7 +340,7 @@ m -- (remove local account)
  Precondition: A new employee is hired  
  Post condition: The new employee has got his local account
 
-| Scenario ID: SC4        | Corresponds to UC:  Add new local account|
+| Scenario ID: SC5        | Corresponds to UC:  Add new local account|
 | ------------- |:-------------:| 
 | Step#        | Description  |
 |  1     | Manager creates a new local account for the employee just hired|
@@ -351,7 +351,7 @@ m -- (remove local account)
  Precondition: An employee leaves the company  
  Post condition: The local account of the employee is no longer available
 
-| Scenario ID: SC5        | Corresponds to UC:  Remove the local account of an employee  |
+| Scenario ID: SC6       | Corresponds to UC:  Remove the local account of an employee  |
 | ------------- |:-------------:| 
 | Step#        | Description  |
 |  1     | Manager selects the corresponding ID of the local account|
@@ -361,7 +361,7 @@ m -- (remove local account)
  Precondition: Manager doesn't remember how many capsules are left and how much money there is in the cash account  
  Post condition: The manager takes note of the number of capsules avaiable per type and the cash account
 
-| Scenario ID: SC6        | Corresponds to UC:  Show summary  |
+| Scenario ID: SC7        | Corresponds to UC:  Show summary  |
 | ------------- |:-------------:| 
 | Step#        | Description  |
 |  1     | In order to know the number of capsules per type available to be sold directly, the Manager selects the "Show Summary" button on the main page of the LaTazza|
@@ -372,7 +372,7 @@ m -- (remove local account)
  Precondition: An order is just been delivered to the company  
  Post condition: Summary has been updated with the new capsules amount
 
-| Scenario ID: SC7        | Corresponds to UC:  Confirm order delivery  |
+| Scenario ID: SC8        | Corresponds to UC:  Confirm order delivery  |
 | ------------- |:-------------:| 
 | Step#        | Description  |
 |  1     | Manager clicks on the interface dedicated to the confirm of the order delivery|
