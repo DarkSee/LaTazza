@@ -163,7 +163,6 @@ John manages the order using the application and the visitor pays cash.
 
 ```plantuml
 left to right direction
-skinparam packageStyle rectangular
 
 actor "Mail System" as ms
 actor manager as m
@@ -173,7 +172,6 @@ note left
 end note
 
 actor "Banking System" as bs
-
 
 m -- (sell capsules)
 m -- (make an order)
@@ -186,8 +184,8 @@ m -- (remove local account)
 (make an order) -- bs
 (make an order) -- ms
 (make an order) .> (update summary) : include
-
-
+(sell capsules) .> (sell capsules to visitors)
+(sell capsules) .> (sell capsules to employee)
 (sell capsules) .> (accept payment): include
 (accept payment) .> (use account balance for employee): include
 (accept payment) .> (use cash for visitors) : include
@@ -207,16 +205,26 @@ m -- (remove local account)
 |  Nominal Scenario     | The manager selects the number of boxes needed, sends an order to the warehouse paying with a credit card.If the operation is successful, an order number is automatically generated and then it will be used by the Manager to confirm that the order is delivered.  The application updates the summary after receiving the boxes  |
 |  Variants     | If the delivered order is incorrect, the corresponding value will be refund to the manager. If the payment is unsuccessful, order will be cancelled. |
 
-### Use case 2, Sell capsules
+### Use case 2, Sell capsules to visitors
 
 | Actors Involved        | Manager |
 | ------------- |:-------------:| 
-|  Precondition     | Client asks for capsules|  
-|  Post condition     | Client has got capsules to use|
-|  Nominal Scenario     | If the client is an employee, the manager selects the corresponding local account, he selects the payment method, the number of capsules requested. Then he commits the request. The application updates the summary.  |
+|  Precondition     | Visitor asks for capsules|  
+|  Post condition     | Visitor has got capsules to use|
+|  Nominal Scenario     | The manager selects the "Visitor" checkbox,the number of capsules requested and the type of capsules. The manager receives the payament by cash,then he commits the request. The application updates the summary.  |
+|  Variants     | If the capsules in the summary are not enough, the application prints an error message.  |
+
+### Use case 3, Sell capsules to employee
+
+| Actors Involved        | Manager |
+| ------------- |:-------------:| 
+|  Precondition     | Employee asks for capsules|  
+|  Post condition     | Employee has got capsules to use|
+|  Nominal Scenario     | The manager selects the corresponding local account, he selects the payment method (cash or local account), the number of capsules requested. Then he commits the request. The application updates the summary.  |
 |  Variants     | If the capsules in the summary are not enough, the application prints an error message. If the debt is higher than threshold, sale will not be performed. |
 
-### Use case 3, Add credit to local account's wallet
+
+### Use case 4, Add credit to local account
 
 | Actors Involved        | Manager |
 | ------------- |:-------------:| 
@@ -225,7 +233,7 @@ m -- (remove local account)
 |  Nominal Scenario     | Manager takes money from an employee and then add credit to the wallet of the account related to that employee.  |
 |  Variants     | The balance can be increased or decreased by a different amount than desired, due to typos. The increased wallet balance can belong to the wrong account. Possibility to undo should be implemented. |
 
-### Use case 4, Add new local account
+### Use case 5, Add new local account
 
 | Actors Involved        | Manager |
 | ------------- |:-------------:| 
@@ -234,7 +242,7 @@ m -- (remove local account)
 |  Nominal Scenario     | The manager adds a new account linked to the new hired employee, setting his balance to zero.  |
 |  Variants     | If the new emloyee wants to recharge immediately his wallet, the balance will not be set to zero but to the amount charged. ID with a wrong format, operation refused. |
 
-### Use case 5, Remove local account
+### Use case 6, Remove local account
 
 | Actors Involved        | Manager |
 | ------------- |:-------------:| 
@@ -243,7 +251,7 @@ m -- (remove local account)
 |  Nominal Scenario     | The manager removes the account of the employee.  |
 |  Variants     | If the manager selects the wrong ID, he/she has the possibility to revert the operation before doing other actions. |
 
-### Use case 6, Show summary
+### Use case 7, Show summary
 
 | Actors Involved        | Manager |
 | ------------- |:-------------:| 
@@ -252,7 +260,7 @@ m -- (remove local account)
 |  Nominal Scenario   | The manager wants to know the number of capsules avaiable per type and the cash account so he press the "Show summary" button in the main Menu of the LaTazza application|
 |  Variants           | - |
 
-### Use case 7, Confirm order delivery
+### Use case 8, Confirm order delivery
 | Actors Involved        | Manager|
 | ------------- |:-------------:| 
 |  Precondition       | An order is just been delivered to the company|  
@@ -281,25 +289,41 @@ m -- (remove local account)
 |  8     | The manager confirms the order|
 |  9     | An order number is automatically generated |
 |  10    | The application sends an email with order details to the warehouse|
-|  11    | The application update the summary after receiving the boxes|
+|  11    | The application updates the summary after receiving the boxes|
 
 
-## Scenario 2 - Capsules successfully sold
- Precondition: Client asks for capsules  
- Post condition: Client has got capsules to use
+## Scenario 2 - Capsules successfully sold to visitors
+ Precondition: Visitor asks for capsules  
+ Post condition: Visitor has got capsules to use
+
+| Scenario ID: SC2        | Corresponds to UC:  Sell capsules to visitor|
+| ------------- |:-------------:| 
+| Step#        | Description  |
+|  1    | Manager selects the "Vistor" checkbox in the "Sell Capsules" window|
+|  2    | Manager selects the number and type of capsules requested by the visitor |
+|  3    |  Manager receives the payment from visitor by cash|
+|  4    |  Manger confirms the sale|
+|  5    |  The application updates the summary |
+
+
+
+## Scenario 3 - Capsules successfully sold to employee
+ Precondition: Employee asks for capsules  
+ Post condition: Employee has got capsules to use
 
 | Scenario ID: SC2        | Corresponds to UC:  Sell capsules to employee|
 | ------------- |:-------------:| 
 | Step#        | Description  |
 |  1     | Manager selects the local account corresponding to the employee | 
-|  2     | Maanger selects the number and type of capsules requested by the client |
-|  3    |  Manager selects the payment method chosen by the client|
+|  2     | Maanger selects the number and type of capsules requested by the employee |
+|  3    |  Manager selects the payment method chosen by the employee|
 |  4    |  Manger confirms the sale|
-|  5     |  The application update the summary |
+|  5     |  The application updates the summary |
 | 6      | If the employee pays with his wallet, the application updates his balance|
 
 
-## Scenario 3 - Local account successfully recharged
+
+## Scenario 4 - Local account successfully recharged
  Precondition: Employees ask for adding credit to their account  
  Post condition: The wallet balance is increased
 
@@ -312,7 +336,7 @@ m -- (remove local account)
 |  4     | The application shows a popup that confirms that the action had succes |
 |  5     | The application updates the balance related to that account|
 
-## Scenario 4 - New local account is created
+## Scenario 5 - New local account is created
  Precondition: A new employee is hired  
  Post condition: The new employee has got his local account
 
@@ -323,7 +347,7 @@ m -- (remove local account)
 |  2     | Manager sets the ID of the account with the employee's ID|
 |  3     | Manager sets to 0€ the local account balance |
 
-## Scenario 5 - Local account is removed
+## Scenario 6 - Local account is removed
  Precondition: An employee leaves the company  
  Post condition: The local account of the employee is no longer available
 
@@ -333,7 +357,7 @@ m -- (remove local account)
 |  1     | Manager selects the corresponding ID of the local account|
 |  2     | Manager provides to delete the corresponding local account|
 
-## Scenario 6 - Summary is successfully printed
+## Scenario 7 - Summary is successfully printed
  Precondition: Manager doesn't remember how many capsules are left and how much money there is in the cash account  
  Post condition: The manager takes note of the number of capsules avaiable per type and the cash account
 
@@ -344,7 +368,7 @@ m -- (remove local account)
 |  2     | In order to know the amount of money present in the cash account, the Manager selects the "Show Summary" button on the main page of the LaTazza|
 
 
-## Scenario 7 - Summary successfully updated after delivery
+## Scenario 8 - Summary successfully updated after delivery
  Precondition: An order is just been delivered to the company  
  Post condition: Summary has been updated with the new capsules amount
 
