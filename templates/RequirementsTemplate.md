@@ -381,8 +381,8 @@ class Summary {
 }
 
 Manager --|> Employee
-Box "50" o-- "1" Capsule : contains
-Order "1..*" o-- "1" Box : made up of
+Box "1" o-- "50" Capsule : contains
+Order "1" o-- "1..*" Box : made up of
 Manager "1" -- "1..*" Order : sends
 Employee "1" <|-- "1" Wallet : has
 Manager "1" -- "1..*" Visitor : sells to
