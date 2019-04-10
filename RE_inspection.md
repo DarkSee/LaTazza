@@ -30,11 +30,11 @@
 
 | Problem ID | Location                    | Problem description                                          | Status |          Type          | Gravity |
 | :--------: | --------------------------- | ------------------------------------------------------------ | :----: | :--------------------: | :-----: |
-|     1      | Stakeholders                | Others, Warehouse, Banking System, Capsules, Mail system are not stakeholders |  Open  |     Incorrect fact     |  Major  |
-|     2      | Non functional requirements | NFR7 is ambiguous, it seems that the balance must be always below -10 |  Open  |       Ambiguity        |  Minor  |
-|     3      | Non functional requirements | NFR4 should not say how to obtain privacy, it should be decided during the design phase |  Open  |   Overspecification    | Normal  |
-|     4      | Use cases                   | Information in variants of use case 4 is not suitable        |  Open  | Extraneous information |  Minor  |
-|     5      | Use cases                   | Precondition in use case 1 is not necessary, the manager should be always able to make an order |  Open  |     Incorrect fact     | Normal  |
-|     6      | Glossary                    | It seems that the manager is able to modify directly the summary |  Open  |       Ambiguity        |  Minor  |
-|     7      | Glossary                    | Wallet is not a specialization of Employee                   |  Open  |     Incorrect fact     | Normal  |
-|     8      | System design               | System design should not model the software modules          |  Open  | Extraneous information |  Major  |
+|     1      | Stakeholders                | Others, Warehouse, Banking System, Capsules, Mail system are not stakeholders |  Closed  |     Incorrect fact     |  Major  |
+|     2      | Non functional requirements | NFR7 is ambiguous, it seems that the balance must be always below -10 |  Closed  |       Ambiguity        |  Minor  |
+|     3      | Non functional requirements | NFR4 should not say how to obtain privacy, it should be decided during the design phase |  Closed  |   Overspecification    | Normal  |
+|     4      | Use cases                   | Information in variants of use case 4 is not suitable        |  Closed  | Extraneous information |  Minor  |
+|     5      | Use cases                   | Precondition in use case 1 is not necessary, the manager should be always able to make an order |  Closed  |     Incorrect fact     | Normal  |
+|     6      | Glossary                    | It seems that the manager is able to modify directly the summary |  Closed  |       Ambiguity        |  Minor  |
+|     7      | Glossary                    | Wallet is not a specialization of Employee                   |  Closed  |     Incorrect fact     | Normal  |
+|     8      | System design               | System design should not model the software modules          |  Closed  | Extraneous information |  Major  |
