@@ -28,7 +28,27 @@ UML diagrams **MUST** be written using plantuml notation.
 \<explain rationales for choices> 
 
 \<mention architectural patterns used, if any>
+```plantuml
+package "latazza" as LT{
 
+}
+
+package "latazza.gui" as UI{
+
+}
+
+package "latazza.data" as I{
+
+}
+
+package "latazza.exceptions" as E {
+
+}
+
+LT <.. UI
+I ..> LT
+E ..> LT
+```
 
 # Class diagram
 
@@ -36,17 +56,134 @@ UML diagrams **MUST** be written using plantuml notation.
 
 \<mention design patterns used, if any>
 
+```plantuml
+Class "LaTazza" as LT {
+void main(String[] args)
+}
+
+class "DataImpl" as DI{
++ int CashAccount
++ArrayList<Beverage> beverages
++ArrayList<Employee> employees
++ArrayList<Transaction> operations
+
+DataImpl()
+Integer sellCapsules(Integer employeeId, Integer beverageId, Integer numberOfCapsules, Boolean fromAccount)
+void sellCapsulesToVisitor(Integer beverageId, Integer numberOfCapsules)
+Integer rechargeAccount(Integer id, Integer amountInCents)
+void buyBoxes(Integer beverageId, Integer boxQuantity)
+List<String> getEmployeeReport(Integer employeeId, Date startDate, Date endDate)
+List<String> getReport(Date startDate, Date endDate) 
+Integer createBeverage(String name, Integer capsulesPerBox, Integer boxPrice)
+void updateBeverage(Integer id, String name, Integer capsulesPerBox, Integer boxPrice)
+String getBeverageName(Integer id)
+Integer getBeverageCost(Integer id)
+Integer getBeverageCapsulesPerBox(Integer id)
+Integer getBeverageBoxPrice(Integer id)
+List<Integer> getBeveragesId()
+Map<Integer, String> getBeverages()
+Integer getBeverageCapsules(Integer id) 
+Integer createEmployee(String name, String surname)
+void updateEmployee(Integer id, String name, String surname)
+Integer updateEmployeeBalance(Integer id)
+String getEmployeeName(Integer id)
+String getEmployeeSurname(Integer id)
+Integer getEmployeeBalance(Integer id)
+List<Integer> getEmployeesId()
+Map<Integer, String> getEmployees()
+Integer getBalance()
+void reset()
+void loadDatas()
+void storeDatas()
+Employee findEmplByID(int id)
+Beverage findBevByID(int id)
+LocalDateTime convertDate(Date date)
+}
+
+class "Employee" as E {
++int ID
++String name
++String surname
++ArrayList<Transaction> operations
++int balance
+
+void addSale(Sale sale)
+void addRechargeAccount(RechargeAccount recharge)
+void updateBalance(Integer amountInCents, Boolean flag)
+}
+
+class "Beverage" as B{
++int ID
++int boxPrice
++String Name
++int capsulesPerBox
+int costPerCapsule
+
+void updateQuantity(int numberOfCapsules)
+void addQuantity(int boxQuantity)
+}
+
+
+class "Transaction" as T{
++int amount
++String dateString
++LocalDateTime date
+
+abstract String createStringReport()
+}
+
+class "Sale" as S{
++Beverage beverage
++Employee employee
++int numberOfCapsules
++Boolean payWithAccount
+
+String createStringReport()
+
+}
+
+class "Recharge Account" as RA{
++Employee employee
+
+String createStringReport()
+}
+
+class "Purchase" as P {
+int boxQuantity
+Beverage beverage
+
+String createStringReport()
+}
+
+LT --> DI
+DI --> T
+DI --> E
+DI --> B
+S --> E
+B <-- S
+P --> B
+S --|> T
+RA --|> T
+P --|> T
+RA --> E
+E --> T
+```
 
 # Verification traceability matrix
 
 \<for each functional requirement from the requirement document, list which classes concur to implement it>
 
 
-|  | Class x | Class y  | .. |
-| ------------- |:-------------:| -----:| -----:|
-| Functional requirement x  |  |  | |
-| Functional requirement y  |  |  | |
-| .. |  |  | |
+|      | DataImpl | Employee | Beverage | Purchase | Sale | Recharge | Transaction |
+| ---- | :------: | :------: | :------: | :------: | :--: | :------: | :---------: |
+| FR1  |    x     |    x     |    x     |          |  x   |          |      x      |
+| FR2  |    x     |          |    x     |          |  x   |          |      x      |
+| FR3  |    x     |    x     |          |          |      |    x     |      x      |
+| FR4  |    x     |          |    x     |    x     |      |          |      x      |
+| FR5  |    x     |    x     |    x     |          |  x   |    x     |      x      |
+| FR6  |    x     |    x     |    x     |    x     |  x   |    x     |      x      |
+| FR7  |    x     |          |    x     |          |      |          |             |
+| FR8  |    x     |    x     |          |          |      |          |             |
 
 # Verification sequence diagrams 
 \<select key scenarios from the requirement document. For each of them define a sequence diagram showing that the scenario can be implemented by the classes and methods in the design>
