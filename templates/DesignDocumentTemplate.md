@@ -62,7 +62,7 @@ void main(String[] args)
 }
 
 class "DataImpl" as DI{
-+ int CashAccount
++Integer CashAccount
 +ArrayList<Beverage> beverages
 +ArrayList<Employee> employees
 +ArrayList<Transaction> operations
@@ -95,17 +95,17 @@ Integer getBalance()
 void reset()
 void loadDatas()
 void storeDatas()
-Employee findEmplByID(int id)
-Beverage findBevByID(int id)
+Employee findEmplByID(Integer id)
+Beverage findBevByID(Integer id)
 LocalDateTime convertDate(Date date)
 }
 
 class "Employee" as E {
-+int ID
++Integer ID
 +String name
 +String surname
 +ArrayList<Transaction> operations
-+int balance
++Integer balance
 
 void addSale(Sale sale)
 void addRechargeAccount(RechargeAccount recharge)
@@ -113,19 +113,19 @@ void updateBalance(Integer amountInCents, Boolean flag)
 }
 
 class "Beverage" as B{
-+int ID
-+int boxPrice
++Integer ID
++Integer boxPrice
 +String Name
-+int capsulesPerBox
-int costPerCapsule
++Integer capsulesPerBox
++Integer costPerCapsule
 
-void updateQuantity(int numberOfCapsules)
-void addQuantity(int boxQuantity)
+void updateQuantity(Integer numberOfCapsules)
+void addQuantity(Integer boxQuantity)
 }
 
 
 class "Transaction" as T{
-+int amount
++Integer amount
 +String dateString
 +LocalDateTime date
 
@@ -135,7 +135,7 @@ abstract String createStringReport()
 class "Sale" as S{
 +Beverage beverage
 +Employee employee
-+int numberOfCapsules
++Integer numberOfCapsules
 +Boolean payWithAccount
 
 String createStringReport()
@@ -149,8 +149,8 @@ String createStringReport()
 }
 
 class "Purchase" as P {
-int boxQuantity
-Beverage beverage
++Integer boxQuantity
++Beverage beverage
 
 String createStringReport()
 }
