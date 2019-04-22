@@ -30,6 +30,7 @@ package "latazza" as LT{
 
 }
 
+
 package "latazza.gui" as UI{
 
 }
@@ -42,9 +43,21 @@ package "latazza.exceptions" as E {
 
 }
 
+
+
 LT <.. UI
 I ..> LT
 E ..> LT
+
+```
+``` plantuml
+note left
+        Layered pattern has been chosen as architectural 
+        pattern, in fact DataImpl is the class that starts 
+        the operation, then all the other methods are wrapped 
+        in the remaining classes, that provide to finish the 
+        task, updating all the datas and coming back to DataImpl.
+end note
 ```
 
 # Class diagram
@@ -95,6 +108,12 @@ Employee findEmplByID(Integer id)
 Beverage findBevByID(Integer id)
 LocalDateTime convertDate(Date date)
 }
+note left
+        Facade pattern has been chose as design pattern,
+        in fact the user can only interact with a single class,
+        which hides all the work done by the other methods for 
+        completing the selected task, acting as a client.
+end note
 
 class "Employee" as E {
 +Integer ID
@@ -197,6 +216,7 @@ EEx <-- DI
 NEBEx <-- DI
 NECEx <-- DI
 ```
+
 
 # Verification traceability matrix
 
