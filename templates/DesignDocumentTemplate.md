@@ -189,6 +189,25 @@ E --> T
 \<select key scenarios from the requirement document. For each of them define a sequence diagram showing that the scenario can be implemented by the classes and methods in the design>
 
 ```plantuml
-": Class X" -> ": Class Y": "1: message1()"
-": Class X" -> ": Class Y": "2: message2()"
+
+": Clock" -> ": laTazza": "0: main()"
+": Clock" -> ": DataImpl": "1: sellCapsules(...)"
+note left
+        Method "sellCapsules(...)" internally
+        should check if there're enough capsules 
+        left of the desired type, then it 
+        calls further methods. Otherwise, it would
+        trigger an exception.
+end note
+": DataImpl" -> ": DataImpl": "2: getEmployeeBalance(...)"
+": DataImpl" -> ": Employee": "3: updateBalance(...)"
+": Employee" -> ": DataImpl": "4: "
+": DataImpl" -> ": DataImpl": "5: getBeverageCost(...)"
+": DataImpl" -> ": Beverage": "6: getCost(...)"
+": Beverage" -> ": DataImpl": "7: "
+": DataImpl" -> ": DataImpl": "8: updateEmployeeBalance(...)"
+": DataImpl" -> ": Employee": "9: updateBalance(...)"
+": Employee" -> ": DataImpl": "10: "
+": DataImpl" -> ": Clock": "11: SUCCESS"
+
 ```
