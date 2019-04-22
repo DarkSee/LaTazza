@@ -1,8 +1,8 @@
 # Design Document Template
 
-Authors:
+Authors: hip hip
 
-Date:
+Date: 22/04/2019
 
 Version:
 
@@ -19,11 +19,8 @@ The design document has to comply with:
 1. [Official Requirement Document](../Official\ Requirements\ Document.md)
 2. [DataInterface.java](../src/main/java/it/polito/latazza/data/DataInterface.java)
 
-UML diagrams **MUST** be written using plantuml notation.
 
 # Package diagram
-
-\<define UML package diagram >
 
 \<explain rationales for choices> 
 
@@ -52,7 +49,6 @@ E ..> LT
 
 # Class diagram
 
-\<for each package define class diagram with classes defined in the package>
 
 \<mention design patterns used, if any>
 
@@ -219,7 +215,6 @@ NECEx <-- DI
 | FR8  |    x     |    x     |          |          |      |          |             |
 
 # Verification sequence diagrams 
-\<select key scenarios from the requirement document. For each of them define a sequence diagram showing that the scenario can be implemented by the classes and methods in the design>
 
 
 ## Sequence diagram for Scenario 1
@@ -236,7 +231,7 @@ note left
 end note
 ": DataImpl" -> ": DataImpl": "2: findEmplByID(...)"
 ": DataImpl" -> ": Sale": "3: new Sale(...)"
-": Sale" -> ": Beverage": "4: getCostPerCapsule(...)"
+": Sale" -> ": Beverage": "4: getCostPerCapsule()"
 ": Sale" <-": Beverage": "5: "
 ": DataImpl" -> ": DataImpl": "5: findBevByID(...)"
 ": DataImpl" -> ": Employee": "6: addSale(...)"
@@ -249,7 +244,7 @@ end note
 ": DataImpl" -> ": Employee": "10: updateBalance(...)"
 ": Employee" -> ": DataImpl": "11: "
 
-": DataImpl" -> ": Sale": "12: getAmount(...)"
+": DataImpl" -> ": Sale": "12: getAmount()"
 ": Sale" -> ": DataImpl": "11: "
 
 ": DataImpl" -> ": Clock": "13: SUCCESS"
@@ -273,13 +268,13 @@ note left
 end note
 ": DataImpl" -> ": DataImpl": "2: findEmplByID(...)"
 ": DataImpl" -> ": Sale": "3: new Sale(...)"
-": Sale" -> ": Beverage": "4: getCostPerCapsule(...)"
+": Sale" -> ": Beverage": "4: getCostPerCapsule()"
 ": Sale" <-": Beverage": "5: "
 
 ": DataImpl" -> ": Employee": "6: getBalance(...)"
 ": DataImpl" <- ": Employee": "7: 
-": DataImpl" -> ": Sale": "8: getAmount(...)"
-": DataImpl" <- ": Sale": "9: 
+": DataImpl" -> ": Sale": "8: getAmount()"
+": DataImpl" <- ": Sale": "9: throw new" 
 ": DataImpl" -> ": EmployeeException": "10: 
 
 ": Clock" <- ": EmployeeException": "11: FAILURE"
