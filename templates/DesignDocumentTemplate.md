@@ -221,6 +221,8 @@ NECEx <-- DI
 # Verification sequence diagrams 
 \<select key scenarios from the requirement document. For each of them define a sequence diagram showing that the scenario can be implemented by the classes and methods in the design>
 
+
+## Sequence diagram for Scenario 1
 ```plantuml
 
 ": Clock" -> ": laTazza": "0: main()"
@@ -232,15 +234,55 @@ note left
         calls further methods. Otherwise, it would
         trigger an exception.
 end note
-": DataImpl" -> ": DataImpl": "2: getEmployeeBalance(...)"
-": DataImpl" -> ": Employee": "3: updateBalance(...)"
-": Employee" -> ": DataImpl": "4: "
-": DataImpl" -> ": DataImpl": "5: getBeverageCost(...)"
-": DataImpl" -> ": Beverage": "6: getCost(...)"
-": Beverage" -> ": DataImpl": "7: "
-": DataImpl" -> ": DataImpl": "8: updateEmployeeBalance(...)"
-": DataImpl" -> ": Employee": "9: updateBalance(...)"
-": Employee" -> ": DataImpl": "10: "
-": DataImpl" -> ": Clock": "11: SUCCESS"
+": DataImpl" -> ": DataImpl": "2: findEmplByID(...)"
+": DataImpl" -> ": Sale": "3: new Sale(...)"
+": Sale" -> ": Beverage": "4: getCostPerCapsule(...)"
+": Sale" <-": Beverage": "5: "
+": DataImpl" -> ": DataImpl": "5: findBevByID(...)"
+": DataImpl" -> ": Employee": "6: addSale(...)"
+": Employee" -> ": DataImpl": "7: "
+
+": DataImpl" -> ": Beverage": "8: updateQuantity(...)"
+": Beverage" -> ": DataImpl": "9: "
+
+
+": DataImpl" -> ": Employee": "10: updateBalance(...)"
+": Employee" -> ": DataImpl": "11: "
+
+": DataImpl" -> ": Sale": "12: getAmount(...)"
+": Sale" -> ": DataImpl": "11: "
+
+": DataImpl" -> ": Clock": "13: SUCCESS"
+
+```
+
+
+
+## Sequence diagram for Scenario 2
+
+```plantuml
+@startuml
+": Clock" -> ": laTazza": "0: main()"
+": Clock" -> ": DataImpl": "1: sellCapsules(...)"
+note left
+        Method "sellCapsules(...)" internally
+        should check if there're enough capsules 
+        left of the desired type, then it 
+        calls further methods. Otherwise, it would
+        trigger an exception.
+end note
+": DataImpl" -> ": DataImpl": "2: findEmplByID(...)"
+": DataImpl" -> ": Sale": "3: new Sale(...)"
+": Sale" -> ": Beverage": "4: getCostPerCapsule(...)"
+": Sale" <-": Beverage": "5: "
+
+": DataImpl" -> ": Employee": "6: getBalance(...)"
+": DataImpl" <- ": Employee": "7: 
+": DataImpl" -> ": Sale": "8: getAmount(...)"
+": DataImpl" <- ": Sale": "9: 
+": DataImpl" -> ": EmployeeException": "10: 
+
+": Clock" <- ": EmployeeException": "11: FAILURE"
+@enduml
 
 ```
