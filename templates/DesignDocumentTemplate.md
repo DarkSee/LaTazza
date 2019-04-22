@@ -274,8 +274,8 @@ end note
 ": DataImpl" -> ": Employee": "6: getBalance(...)"
 ": DataImpl" <- ": Employee": "7: 
 ": DataImpl" -> ": Sale": "8: getAmount()"
-": DataImpl" <- ": Sale": "9: throw new" 
-": DataImpl" -> ": EmployeeException": "10: 
+": DataImpl" <- ": Sale": "9: " 
+": DataImpl" -> ": EmployeeException": "10: throw new"
 
 ": Clock" <- ": EmployeeException": "11: FAILURE"
 @enduml
