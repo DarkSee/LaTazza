@@ -108,12 +108,7 @@ Employee findEmplByID(Integer id)
 Beverage findBevByID(Integer id)
 LocalDateTime convertDate(Date date)
 }
-note left
-        Facade pattern has been chose as design pattern,
-        in fact the user can only interact with a single class,
-        which hides all the work done by the other methods for 
-        completing the selected task, acting as a client.
-end note
+
 
 class "Employee" as E {
 +Integer ID
@@ -215,6 +210,15 @@ DEx <-- DI
 EEx <-- DI
 NEBEx <-- DI
 NECEx <-- DI
+
+```
+```plantuml
+note left
+        Facade pattern has been chose as design pattern,
+        in fact the user can only interact with a single class,
+        which hides all the work done by the other methods for 
+        completing the selected task, acting as a client.
+end note
 ```
 
 
