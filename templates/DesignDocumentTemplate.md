@@ -155,6 +155,29 @@ class "Purchase" as P {
 String createStringReport()
 }
 
+class "Exception" as Ex {
+    
+}
+
+class "Beverage Exception" as BEx {
+    
+}
+
+class "Date Exception" as DEx {
+    
+}
+
+class "Employee Exception" as EEx {
+    
+}
+
+class "NotEnoughBalance" as NEBEx {
+    
+}
+
+class "NotEnoughCapsules" as NECEx {
+    
+}
 LT --> DI
 DI --> T
 DI --> E
@@ -167,6 +190,16 @@ RA --|> T
 P --|> T
 RA --> E
 E --> T
+BEx --|> Ex
+DEx --|> Ex
+EEx --|> Ex
+NEBEx --|> Ex
+NECEx --|> Ex
+BEx <-- DI
+DEx <-- DI
+EEx <-- DI
+NEBEx <-- DI
+NECEx <-- DI
 ```
 
 # Verification traceability matrix
