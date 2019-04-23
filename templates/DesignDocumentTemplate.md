@@ -254,24 +254,29 @@ note left
         trigger an exception.
 end note
 ": DataImpl" -> ": DataImpl": "2: findEmplByID(...)"
-": DataImpl" -> ": Sale": "3: new Sale(...)"
-": Sale" -> ": Beverage": "4: getCostPerCapsule()"
-": Sale" <-": Beverage": "5: "
-": DataImpl" -> ": DataImpl": "5: findBevByID(...)"
-": DataImpl" -> ": Employee": "6: addSale(...)"
-": Employee" -> ": DataImpl": "7: "
+": DataImpl" -> ": DataImpl": "3: findBevByID(...)"
+": DataImpl" -> ": Sale": "4: new Sale(...)"
+": Sale" -> ": Beverage": "5: getCostPerCapsule()"
+": Sale" <-": Beverage": "6: "
 
-": DataImpl" -> ": Beverage": "8: updateQuantity(...)"
-": Beverage" -> ": DataImpl": "9: "
+": DataImpl" -> ": Beverage": "7: getTotalQuantity()"
+": DataImpl" <-": Beverage": "8: "
 
 
-": DataImpl" -> ": Employee": "10: updateBalance(...)"
-": Employee" -> ": DataImpl": "11: "
+": DataImpl" -> ": Employee": "9: addSale(...)"
+": Employee" -> ": DataImpl": "10: "
 
-": DataImpl" -> ": Sale": "12: getAmount()"
-": Sale" -> ": DataImpl": "11: "
+": DataImpl" -> ": Beverage": "11: updateQuantity(...)"
+": Beverage" -> ": DataImpl": "12: "
 
-": DataImpl" -> ": Clock": "13: SUCCESS"
+
+": DataImpl" -> ": Employee": "13: updateBalance(...)"
+": Employee" -> ": DataImpl": "14: "
+
+": DataImpl" -> ": Sale": "15: getAmount()"
+": Sale" -> ": DataImpl": "16: "
+
+": DataImpl" -> ": Clock": "17: SUCCESS"
 
 ```
 
@@ -291,17 +296,18 @@ note left
         trigger an exception.
 end note
 ": DataImpl" -> ": DataImpl": "2: findEmplByID(...)"
-": DataImpl" -> ": Sale": "3: new Sale(...)"
-": Sale" -> ": Beverage": "4: getCostPerCapsule()"
-": Sale" <-": Beverage": "5: "
+": DataImpl" -> ": DataImpl": "3: findBevByID(...)"
+": DataImpl" -> ": Sale": "4: new Sale(...)"
+": Sale" -> ": Beverage": "5: getCostPerCapsule()"
+": Sale" <-": Beverage": "6: "
 
-": DataImpl" -> ": Employee": "6: getBalance(...)"
-": DataImpl" <- ": Employee": "7: 
-": DataImpl" -> ": Sale": "8: getAmount()"
-": DataImpl" <- ": Sale": "9: " 
-": DataImpl" -> ": EmployeeException": "10: throw new"
+": DataImpl" -> ": Employee": "7: getBalance(...)"
+": DataImpl" <- ": Employee": "8: 
+": DataImpl" -> ": Sale": "9: getAmount()"
+": DataImpl" <- ": Sale": "10: " 
+": DataImpl" -> ": EmployeeException": "11: throw new"
 
-": Clock" <- ": EmployeeException": "11: FAILURE"
+": Clock" <- ": EmployeeException": "12: FAILURE"
 @enduml
 
 ```
