@@ -212,6 +212,7 @@ note left
         in fact the user can only interact with a single class,
         which hides all the work done by the other methods for 
         completing the selected task, acting as a client.
+        Getters and Setters are voluntarily omitted.
 end note
 ```
 
