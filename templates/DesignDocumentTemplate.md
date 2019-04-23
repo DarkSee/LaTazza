@@ -22,9 +22,6 @@ The design document has to comply with:
 
 # Package diagram
 
-\<explain rationales for choices> 
-
-\<mention architectural patterns used, if any>
 ```plantuml
 package "latazza" as LT{
 
@@ -61,9 +58,6 @@ end note
 ```
 
 # Class diagram
-
-
-\<mention design patterns used, if any>
 
 ```plantuml
 Class "LaTazza" as LT {
@@ -223,8 +217,6 @@ end note
 
 
 # Verification traceability matrix
-
-\<for each functional requirement from the requirement document, list which classes concur to implement it>
 
 
 |      | DataImpl | Employee | Beverage | Purchase | Sale | Recharge | Transaction |
