@@ -240,7 +240,7 @@ end note
 ": Clock" -> ": DataImpl": "1: sellCapsules(...)"
 note left
         Method "sellCapsules(...)" internally
-        should check if there're enough capsules 
+        should check if there are enough capsules 
         left of the desired type, then it 
         calls further methods. Otherwise, it would
         trigger an exception.
@@ -282,7 +282,7 @@ end note
 ": Clock" -> ": DataImpl": "1: sellCapsules(...)"
 note left
         Method "sellCapsules(...)" internally
-        should check if there're enough capsules 
+        should check if there are enough capsules 
         left of the desired type, then it 
         calls further methods. Otherwise, it would
         trigger an exception.
