@@ -96,8 +96,8 @@ List<Integer> getEmployeesId()
 Map<Integer, String> getEmployees()
 Integer getBalance()
 void reset()
-void loadDatas()
-void storeDatas()
+void loadData()
+void storeData()
 Employee findEmplByID(Integer id)
 Beverage findBevByID(Integer id)
 LocalDateTime convertDate(Date date)
@@ -213,6 +213,7 @@ note left
         which hides all the work done by the other methods for 
         completing the selected task, acting as a client.
         Getters and Setters are voluntarily omitted.
+        Methods loadData and storeData are used to guarantee persistence through a CSV file.
 end note
 ```
 
