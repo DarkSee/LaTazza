@@ -245,8 +245,10 @@ autoactivate on
 note left
         Method "sellCapsules(...)" internally
         should check if there are enough capsules 
-        left of the desired type, then it 
-        calls further methods. Otherwise, it would
+        left of the desired type,if the Employee exists,
+        if his identifier is valid and
+        if the Employee's account is not negative,
+        then it calls further methods. Otherwise, it would
         trigger an exception.
 end note
 
@@ -302,8 +304,10 @@ autoactivate on
 note left
         Method "sellCapsules(...)" internally
         should check if there are enough capsules 
-        left of the desired type, then it 
-        calls further methods. Otherwise, it would
+        left of the desired type,if the Employee exists,
+        if his identifier is valid and
+        if the Employee's account is not negative,
+        then it calls further methods. Otherwise, it would
         trigger an exception.
 end note
 ": DataImpl" -> ": DataImpl": "2: findEmplByID(...)"
