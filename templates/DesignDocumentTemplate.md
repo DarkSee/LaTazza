@@ -240,7 +240,7 @@ end note
 ": Clock" -> ": DataImpl": "1: sellCapsules(...)"
 note left
         Method "sellCapsules(...)" internally
-        should check if there are enough capsules 
+        should check if there're enough capsules 
         left of the desired type, then it 
         calls further methods. Otherwise, it would
         trigger an exception.
@@ -263,10 +263,15 @@ end note
 
 
 ": DataImpl" -> ": Employee": "13: updateBalance(...)"
-": Employee" -> ": DataImpl": "14: "
 
-": DataImpl" -> ": Sale": "15: getAmount()"
-": Sale" -> ": DataImpl": "16: "
+": DataImpl" -> ": Sale": "14: getAmount()"
+
+": Sale" -> ": DataImpl": "15: "
+
+": Employee" -> ": DataImpl": "16: "
+
+
+
 
 ": DataImpl" -> ": Clock": "17: SUCCESS"
 
@@ -282,7 +287,7 @@ end note
 ": Clock" -> ": DataImpl": "1: sellCapsules(...)"
 note left
         Method "sellCapsules(...)" internally
-        should check if there are enough capsules 
+        should check if there're enough capsules 
         left of the desired type, then it 
         calls further methods. Otherwise, it would
         trigger an exception.
