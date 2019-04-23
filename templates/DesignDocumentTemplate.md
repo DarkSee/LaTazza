@@ -235,9 +235,12 @@ end note
 
 ## Sequence diagram for Scenario 1
 ```plantuml
+skinparam sequenceArrowThickness 2
+autoactivate on
 
-": Clock" -> ": laTazza": "0: main()"
-": Clock" -> ": DataImpl": "1: sellCapsules(...)"
+": Clock" -> ": laTazza"  : "0: main()"
+": laTazza" -> ": DataImpl": "1: sellCapsules(...)"
+
 note left
         Method "sellCapsules(...)" internally
         should check if there are enough capsules 
@@ -245,35 +248,42 @@ note left
         calls further methods. Otherwise, it would
         trigger an exception.
 end note
-": DataImpl" -> ": DataImpl": "2: findEmplByID(...)"
+
+": DataImpl" -> ": DataImpl": "2: findEmplByID(...)" 
+return
+
+
 ": DataImpl" -> ": DataImpl": "3: findBevByID(...)"
+return
 ": DataImpl" -> ": Sale": "4: new Sale(...)"
+
 ": Sale" -> ": Beverage": "5: getCostPerCapsule()"
-": Sale" <-": Beverage": "6: "
+": Sale" <--": Beverage": "6: "
+return
 
 ": DataImpl" -> ": Beverage": "7: getTotalQuantity()"
-": DataImpl" <-": Beverage": "8: "
+": DataImpl" <--": Beverage": "8: "
 
 
 ": DataImpl" -> ": Employee": "9: addSale(...)"
-": Employee" -> ": DataImpl": "10: "
+": Employee" --> ": DataImpl": "10: "
 
 ": DataImpl" -> ": Beverage": "11: updateQuantity(...)"
-": Beverage" -> ": DataImpl": "12: "
+": Beverage" --> ": DataImpl": "12: "
 
 
-": DataImpl" -> ": Employee": "13: updateBalance(...)"
+": DataImpl" -> ": Sale": "13: getAmount()"
 
-": DataImpl" -> ": Sale": "14: getAmount()"
+": Sale" --> ": DataImpl": "14: "
 
-": Sale" -> ": DataImpl": "15: "
+": DataImpl" -> ": Employee": "15: updateBalance(...)"
 
-": Employee" -> ": DataImpl": "16: "
-
-
+ ": Employee" --> ": DataImpl": "16: "
 
 
-": DataImpl" -> ": Clock": "17: SUCCESS"
+
+return "17: SUCCESS" 
+return
 
 ```
 
@@ -282,9 +292,12 @@ end note
 ## Sequence diagram for Scenario 2
 
 ```plantuml
-@startuml
+
+skinparam sequenceArrowThickness 2
+autoactivate on
+
 ": Clock" -> ": laTazza": "0: main()"
-": Clock" -> ": DataImpl": "1: sellCapsules(...)"
+": laTazza" -> ": DataImpl": "1: sellCapsules(...)"
 note left
         Method "sellCapsules(...)" internally
         should check if there are enough capsules 
@@ -293,18 +306,24 @@ note left
         trigger an exception.
 end note
 ": DataImpl" -> ": DataImpl": "2: findEmplByID(...)"
+return
 ": DataImpl" -> ": DataImpl": "3: findBevByID(...)"
+return
 ": DataImpl" -> ": Sale": "4: new Sale(...)"
 ": Sale" -> ": Beverage": "5: getCostPerCapsule()"
-": Sale" <-": Beverage": "6: "
+": Sale" <--": Beverage": "6: "
+return
+": DataImpl" -> ": Sale": "7: getAmount()"
+": DataImpl" <-- ": Sale": "8: " 
+": DataImpl" -> ": Employee": "9: getBalance(...)"
+": DataImpl" <-- ": Employee": "10: 
 
-": DataImpl" -> ": Employee": "7: getBalance(...)"
-": DataImpl" <- ": Employee": "8: 
-": DataImpl" -> ": Sale": "9: getAmount()"
-": DataImpl" <- ": Sale": "10: " 
+
 ": DataImpl" -> ": EmployeeException": "11: throw new"
 
-": Clock" <- ": EmployeeException": "12: FAILURE"
+return : "12: FAILURE"
+return
+return
 @enduml
 
 ```
