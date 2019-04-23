@@ -247,9 +247,9 @@ note left
         should check if there are enough capsules 
         left of the desired type,if the Employee exists,
         if his identifier is valid and
-        if the Employee's account is not negative,
-        then it calls further methods. Otherwise, it would
-        trigger an exception.
+        if the Employee's account has enough balance
+        to manage the transaction, then it calls further methods.
+        Otherwise, it would trigger an exception.
 end note
 
 ": DataImpl" -> ": DataImpl": "2: findEmplByID(...)" 
@@ -306,9 +306,9 @@ note left
         should check if there are enough capsules 
         left of the desired type,if the Employee exists,
         if his identifier is valid and
-        if the Employee's account is not negative,
-        then it calls further methods. Otherwise, it would
-        trigger an exception.
+        if the Employee's account has enough balance
+        to manage the transaction, then it calls further methods.
+        Otherwise, it would trigger an exception.
 end note
 ": DataImpl" -> ": DataImpl": "2: findEmplByID(...)"
 return
