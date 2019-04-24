@@ -264,29 +264,29 @@ return
 ": Sale" -> ": Beverage": "5: getCostPerCapsule()"
 ": Sale" <--": Beverage": "6: "
 return
+": DataImpl" -> ": Sale": "7: getAmount()
+": DataImpl" <-- ": Sale":"8: "
+": DataImpl" -> ": Employee": "9: getBalance(...)"
+": DataImpl" <-- ": Employee": "10:
 
-": DataImpl" -> ": Beverage": "7: getTotalQuantity()"
-": DataImpl" <--": Beverage": "8: "
-
-
-": DataImpl" -> ": Employee": "9: addSale(...)"
-": Employee" --> ": DataImpl": "10: "
-
-": DataImpl" -> ": Beverage": "11: updateQuantity(...)"
-": Beverage" --> ": DataImpl": "12: "
+": DataImpl" -> ": Beverage": "11: " getTotalQuantity()"
+": DataImpl" <--": Beverage": "12: "
 
 
-": DataImpl" -> ": Sale": "13: getAmount()"
+": DataImpl" -> ": Employee": "13: addSale(...)"
+": Employee" --> ": DataImpl": "14: "
 
-": Sale" --> ": DataImpl": "14: "
-
-": DataImpl" -> ": Employee": "15: updateBalance(...)"
-
- ": Employee" --> ": DataImpl": "16: "
+": DataImpl" -> ": Beverage": "15: updateQuantity(...)"
+": Beverage" --> ": DataImpl": "16: "
 
 
+": DataImpl" -> ": Employee": "17: updateBalance(...)"
 
-return "17: SUCCESS" 
+ ": Employee" --> ": DataImpl": "18: "
+
+
+
+return "19: SUCCESS" 
 return
 
 ```
